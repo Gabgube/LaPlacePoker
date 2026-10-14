@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carte des tournois de poker en France – LaPlacePoker</title>
+  <meta name="description" content="La carte de tous les endroits où jouer au poker en France : bars Red Cactus, casinos et tournois associatifs.">
+  <link rel="canonical" href="https://laplacepoker.fr/carte.html">
+
+  <!-- Polices Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS de Leaflet et MarkerCluster -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.css">
+
+  <!-- Lien vers le fichier CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="icon" type="image/ico" href="assets/img/icon.ico">
+
+</head>
+<body class="page-carte">
+  <!-- En-tête de la page -->
+  <header class="entete">
+    <a class="marque" href="index.html">
+      <img src="assets/img/Logo_Inv_Vert.png" alt="" width="36" height="36">
+      <span>LaPlace<b>Poker</b></span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="/">Accueil</a>
+      <a href="carte.html" aria-current="page">Carte</a>
+      <a href="contact.html">À propos</a>
+    </nav>
+    <button type="button" class="btn btn-primaire btn-proposer" data-proposer aria-label="Proposer un tournoi">
+      <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg><span>Proposer un tournoi</span>
+    </button>
+    <!-- Menu déroulant -->
+      <div class="dropdown">
+    <!-- C'est ce bouton qui appelle ta fonction toggleMenu(event) -->
+    <button type="button" class="btn-burger" onclick="toggleMenu(event)" aria-label="Menu principal">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="4" x2="20" y1="6" y2="6"/>
+        <line x1="4" x2="20" y1="12" y2="12"/>
+        <line x1="4" x2="20" y1="18" y2="18"/>
+      </svg>
+    </button>
+
+    <!-- Le menu que ton JS cible via getElementById("dropdown-content") -->
+    <div class="dropdown-content" id="dropdown-content">
+      <a href="contact.html">À propos & Contact</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+    </div>
+  </div>
+  </header>
+
+  <!-- Contenu principal -->
+  <main>
+    <!-- Panneau latéral avec les filtres et la liste -->
+    <aside>
+      <!-- Recherche d'une ville -->
+      <div class="recherche-ville">
+        <h1 class="titre-panneau">Où jouer au poker&nbsp;?</h1>
+
+        <form id="form-lieu" class="recherche" role="search">
+          <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <label for="q-lieu" class="sr-only">Ville ou code postal</label>
+          <input id="q-lieu" type="search" placeholder="Ville ou code postal" list="suggestions-lieu" autocomplete="off" enterkeyhint="search">
+          <datalist id="suggestions-lieu"></datalist>
+          <button type="submit" class="btn btn-primaire">Chercher</button>
+        </form>
+
+        <div id="bloc-ref" class="bloc-ref" hidden>
+          <svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+          <span id="ref-texte"></span>
+          <select id="f-rayon" aria-label="Rayon de recherche">
+            <option value="10">10 km</option>
+            <option value="25">25 km</option>
+            <option value="50" selected>50 km</option>
+            <option value="100">100 km</option>
+            <option value="0">Toute la France</option>
+          </select>
+          <button type="button" id="btn-ref-effacer" class="btn-icone" aria-label="Effacer la ville"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        </div>
+        <a id="lien-page-ville" class="lien-page-ville" hidden><span id="lien-page-ville-texte"></span><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <p id="statut-lieu" class="statut" role="status" hidden></p>
+      </div>
+
+      <!-- Filtres -->
+      <details class="filters" open>
+        <summary class="btn-mobile-summary">
+          <span class="texte-afficher">Afficher les filtres</span>
+          <span class="texte-cacher">Cacher les filtres</span>
+        </summary>
+
+        <div class="filters-content">
+          <label>Type de lieu
+            <select id="f-type">
+              <option value="">Tous les types</option>
+              <option value="bar">Red Cactus</option>
+              <option value="casino">Casinos</option>
+              <option value="associatif">Associatif</option>
+            </select>
+          </label>
+          <label>Tarif
+            <select id="f-prix">
+              <option value="">Gratuit et payant</option>
+              <option value="gratuit">Gratuit</option>
+              <option value="payant">Payant</option>
+            </select>
+          </label>
+          <label>Format
+            <select id="f-poker">
+              <option value="">Tous les formats</option>
+              <option value="cash">Cash Game</option>
+              <option value="tournois">Tournois</option>
+              <option value="les_deux">Cash Game & Tournois</option>
+            </select>
+          </label>
+        </div>
+      </details>
+
+      <!-- Compteur de résultats -->
+      <div id="count" aria-live="polite"></div>
+
+      <!-- Liste des cartes des bars -->
+      <div id="list"></div>
+    </aside>
+
+    <!-- Conteneur de la carte -->
+    <div id="map" role="region" aria-label="Carte des lieux"></div>
+  </main>
+
+  
+
+  <!-- Fenêtre qui affiche le formulaire pour les organisateurs de tournois caritatifs -->
+  <dialog id="dlg-tournoi" aria-labelledby="dlg-titre">
+    <div class="dlg-barre">
+      <h2 id="dlg-titre">Proposer un tournoi associatif</h2>
+      <button type="button" id="dlg-close">Fermer</button>
+    </div>
+    <div class="dlg-corps">
+      <p id="dlg-msg" hidden>Le formulaire n'est pas encore configuré.</p>
+      <iframe id="dlg-frame" title="Formulaire pour proposer un tournoi associatif" hidden></iframe>
+      <a id="dlg-lien" href="#" target="_blank" rel="noopener noreferrer" hidden>Ouvrir le formulaire dans un nouvel onglet</a>
+    </div>
+  </dialog>
+
+  <!-- Scripts externes Leaflet et MarkerCluster -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js"></script>
+
+  <!-- Lien vers le fichier JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>

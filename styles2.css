@@ -1,0 +1,193 @@
+/* =========================================
+   styles2.css
+   ========================================= */
+
+/* Polices du site */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap");
+
+/* --- 1. Variables & Palette Neutre --- */
+:root {
+  --brand-header: #064e3b; /* Vert tapis sombre */
+  --btn-primary: #0e7a4f;
+  --btn-hover: #064e3b;
+
+  --ink: #111a16;          /* Texte principal */
+  --texte: #3b4642;        /* Texte courant */
+  --fond: #f7f7f3;         /* Fond de page */
+  --surface: #ffffff;      /* Surface des cartes */
+  --line: #e7e8e3;         /* Lignes de séparation */
+  --vert-clair: #e8f5ee;
+  --vert-bord: #c6e7d4;
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* --- 2. Configuration globale de la page (Centrage automatique) --- */
+html {
+  background-color: var(--fond);
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 15px;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
+
+  /* Centrage automatique de la zone de texte, dans une carte blanche */
+  max-width: 740px;
+  margin: 36px auto 64px;
+  padding: 44px 48px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: 0 1px 2px rgba(17, 26, 22, 0.05);
+}
+
+/* --- 3. Styles des textes standards (Mentions & Confidentialité) --- */
+h1 {
+  color: var(--ink);
+  font-family: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+h2 {
+  color: var(--ink);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 36px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 14px;
+  color: var(--texte);
+}
+
+strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* Liens standards */
+a {
+  color: var(--btn-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Bouton / Lien "Retour à la carte" */
+body > p:first-child {
+  margin: 0;
+}
+
+body > p:first-child a,
+.btn-retour {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--brand-header);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  transition: opacity 0.15s ease;
+}
+
+body > p:first-child a:hover,
+.btn-retour:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Message de prévention, en bas de la carte blanche */
+body > p:last-child {
+  margin-bottom: 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+/* --- 4. Styles spécifiques à la page "Contact" (avec les divs) --- */
+.container {
+  width: 100%;
+}
+
+/* La carte blanche est déjà le corps de la page */
+.content-card {
+  background: none;
+  border: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.content-card h1 {
+  margin-top: 0;
+}
+
+/* Boîte de contact */
+.contact-box {
+  background: var(--vert-clair);
+  border: 1px solid var(--vert-bord);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.contact-item strong {
+  min-width: 80px;
+  color: var(--brand-header);
+}
+
+/* Le vrai Bouton (Email) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  background: var(--btn-primary);
+  color: #fff !important;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.2;
+  transition: background 0.15s ease;
+}
+
+.btn:hover {
+  background: var(--btn-hover);
+  text-decoration: none;
+}
+
+/* --- 5. Responsive Mobile --- */
+@media (max-width: 860px) {
+  body {
+    max-width: none;
+    margin: 20px 12px 40px;
+    padding: 26px 20px;
+    border-radius: 18px;
+  }
+}

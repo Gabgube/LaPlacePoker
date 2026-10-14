@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LaPlacePoker - Où jouer au poker près de chez vous ?</title>
+  <meta name="description" content="Trouvez facilement les tournois de poker près de chez vous : casinos, bars Red Cactus et événements associatifs partout en France.">
+  <link rel="canonical" href="https://laplacepoker.fr/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="LaPlacePoker">
+  <meta property="og:title" content="LaPlacePoker - Où jouer au poker près de chez vous ?">
+  <meta property="og:description" content="Bars, casinos, clubs et tournois associatifs : tout le poker live en France au même endroit.">
+  <meta property="og:url" content="https://laplacepoker.fr/">
+  <meta property="og:image" content="https://laplacepoker.fr/assets/img/Logo_base.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Polices Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lien vers le fichier CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="icon" type="image/ico" href="assets/img/icon.ico">
+
+</head>
+<body>
+  <!-- En-tête de la page -->
+  <header class="entete">
+    <a class="marque" href="index.html">
+      <img src="assets/img/Logo_Inv_Vert.png" alt="" width="36" height="36">
+      <span>LaPlace<b>Poker</b></span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="/">Accueil</a>
+      <a href="carte.html">Carte</a>
+      <a href="contact.html">À propos</a>
+    </nav>
+    <button type="button" class="btn btn-primaire btn-proposer" data-proposer aria-label="Proposer un tournoi">
+      <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg><span>Proposer un tournoi</span>
+    </button>
+    <!-- Menu déroulant -->
+      <div class="dropdown">
+    <!-- C'est ce bouton qui appelle ta fonction toggleMenu(event) -->
+    <button type="button" class="btn-burger" onclick="toggleMenu(event)" aria-label="Menu principal">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="4" x2="20" y1="6" y2="6"/>
+        <line x1="4" x2="20" y1="12" y2="12"/>
+        <line x1="4" x2="20" y1="18" y2="18"/>
+      </svg>
+    </button>
+
+    <!-- Le menu que ton JS cible via getElementById("dropdown-content") -->
+    <div class="dropdown-content" id="dropdown-content">
+      <a href="contact.html">À propos & Contact</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+    </div>
+  </div>
+  </header>
+
+  <!-- Contenu principal -->
+  <main>
+    <section class="hero hero-accueil">
+      <div class="hero-contenu">
+        <span class="surtitre">Le poker live en France</span>
+        <h1>Trouvez où jouer au poker près de chez vous</h1>
+        <p>Tournois gratuits en bar, casinos, clubs et tournois associatifs : <strong>713 lieux</strong> réunis au même endroit.</p>
+
+        <form class="recherche recherche-grande" action="carte.html" method="get" role="search">
+          <svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <label for="q" class="sr-only">Ville ou code postal</label>
+          <input id="q" name="ville" type="search" placeholder="Ville ou code postal" autocomplete="off" enterkeyhint="search" required>
+          <button type="submit" class="btn btn-primaire">Chercher</button>
+        </form>
+
+        <div class="raccourcis">
+          <a class="raccourci" href="carte.html?autour=1"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h3M19 12h3M12 2v3M12 19v3"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/></svg>Autour de moi</a>
+          <a class="raccourci" href="carte.html"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Où jouer ce soir</a>
+          <a class="raccourci" href="carte.html"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.1 5.6a2 2 0 0 0 1.8 0l3.7-1.9a1 1 0 0 1 1.4.9v12.8a1 1 0 0 1-.6.9l-4.5 2.3a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.7 1.8a1 1 0 0 1-1.4-.9V6.6a1 1 0 0 1 .6-.9l4.5-2.3a2 2 0 0 1 1.8 0Z"/><path d="M15 5.8v15M9 3.2v15"/></svg>Voir la carte</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="titre-types">
+      <div class="section-titre">
+        <h2 id="titre-types">Où jouer ?</h2>
+      </div>
+      <div class="tuiles">
+        <a class="tuile" href="carte.html?type=associatif" style="--c:#2563eb">
+          <span class="tuile-pastille"></span>
+          <h3>Tournois associatifs</h3>
+          <p class="tuile-nb">8 tournois à venir</p>
+          <p>Tournois caritatifs et associatifs près de chez vous</p>
+        </a>
+        <a class="tuile" href="carte.html?type=casino" style="--c:#1f2937">
+          <span class="tuile-pastille"></span>
+          <h3>Casinos</h3>
+          <p class="tuile-nb">52 lieux</p>
+          <p>Cash games et tournois dans les casinos</p>
+        </a>
+        <a class="tuile" href="contact.html" style="--c:#7c3aed">
+          <span class="tuile-pastille"></span>
+          <h3>Clubs</h3>
+          <p class="tuile-nb">Bientôt</p>
+          <p>Vous gérez un club ? Référencez-le gratuitement.</p>
+        </a>
+        <a class="tuile" href="carte.html?type=bar" style="--c:#e11d48">
+          <span class="tuile-pastille"></span>
+          <h3>Bars Red Cactus</h3>
+          <p class="tuile-nb">653 lieux</p>
+          <p>Tournois gratuits chaque semaine dans les bars</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="titre-agenda">
+      <div class="section-titre">
+        <h2 id="titre-agenda">Prochains tournois</h2>
+        <a href="carte.html?type=associatif" class="lien-fleche">Voir sur la carte <svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="mini-evenements">
+        <article class="mini-evenement">
+          <div class="date-bloc" aria-hidden="true">
+            <span class="jour-sem">sam</span>
+            <span class="jour">17</span>
+            <span class="mois">oct</span>
+          </div>
+          <div>
+            <h3 class="fiche-titre"><a href="https://www.helloasso.com/associations/pco-poker-club-de-l-oise/evenements/main-event-mtt-poker-club-de-l-oise-chevrieres-2026" target="_blank" rel="noopener noreferrer">Main Event MTT - PCO (Poker club de l'Oise Chevrières)</a></h3>
+            <p class="meta">955 Rue de Beauvais 60710 Chevrières</p>
+            <p class="meta">10h · 30€</p>
+          </div>
+        </article>
+        <article class="mini-evenement">
+          <div class="date-bloc" aria-hidden="true">
+            <span class="jour-sem">dim</span>
+            <span class="jour">18</span>
+            <span class="mois">oct</span>
+          </div>
+          <div>
+            <h3 class="fiche-titre"><a href="https://www.intramuros.org/bonnieres-sur-seine/agenda/888021" target="_blank" rel="noopener noreferrer">Tournoi de poker caritatif - Octobre Rose (Poker Instinct Bonnières)</a></h3>
+            <p class="meta">45 Rue Georges Herrewyn 78270 Bonnières-sur-Seine</p>
+            <p class="meta">14h · Gratuit et dons encouragés au profit d'Octobre Rose</p>
+          </div>
+        </article>
+        <article class="mini-evenement">
+          <div class="date-bloc" aria-hidden="true">
+            <span class="jour-sem">sam</span>
+            <span class="jour">24</span>
+            <span class="mois">oct</span>
+          </div>
+          <div>
+            <h3 class="fiche-titre"><a href="https://www.helloasso.com/associations/association-pile-events/evenements/einstein-poker-tour-edition-ladies-octobre-rose-1" target="_blank" rel="noopener noreferrer">Einstein Poker Tour - Edition Ladies Octobre Rose (Pile Events)</a></h3>
+            <p class="meta">3 Quai Souchet 33500 Libourne</p>
+            <p class="meta">9h · Réservé aux femmes majeures</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <aside class="agenda-cta">
+        <div>
+          <h2>Vous organisez des tournois ou gérez un club ?</h2>
+          <p>Faites-vous connaître gratuitement auprès des joueurs de votre région.</p>
+        </div>
+        <div class="cta-boutons">
+          <button type="button" class="btn" data-proposer><svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg>Proposer un tournoi</button>
+          <a class="btn btn-contour" href="contact.html">Référencer un club</a>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="pied">
+    <p>Jouer comporte des risques : endettement, isolement, dépendance. Pour être aidé, appelez le <a href="tel:0974751313">09 74 75 13 13</a> (appel non surtaxé).</p>
+    <nav aria-label="Liens du site">
+      <a href="contact.html">À propos & contact</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-confidentialite.html">Confidentialité</a>
+    </nav>
+  </footer>
+
+  <!-- Fenêtre qui affiche le formulaire pour les organisateurs de tournois caritatifs -->
+  <dialog id="dlg-tournoi" aria-labelledby="dlg-titre">
+    <div class="dlg-barre">
+      <h2 id="dlg-titre">Proposer un tournoi associatif</h2>
+      <button type="button" id="dlg-close">Fermer</button>
+    </div>
+    <div class="dlg-corps">
+      <p id="dlg-msg" hidden>Le formulaire n'est pas encore configuré.</p>
+      <iframe id="dlg-frame" title="Formulaire pour proposer un tournoi associatif" hidden></iframe>
+      <a id="dlg-lien" href="#" target="_blank" rel="noopener noreferrer" hidden>Ouvrir le formulaire dans un nouvel onglet</a>
+    </div>
+  </dialog>
+  
+  <!-- Lien vers le fichier JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
