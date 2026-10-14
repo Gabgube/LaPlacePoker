@@ -121,7 +121,7 @@ function details(l) {
   } else if (l.type === "casino") {
     infoDate = "Voir les dates sur le site";
   } else if (l.date) {
-    infoDate = l.date;
+    infoDate = `Tous les ${l.date}`;
   }
 
   let infoPrix = "";

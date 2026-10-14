@@ -5,846 +5,1047 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Poker à Paris : tournois, casinos et clubs | LaPlacePoker</title>
   <meta name="description" content="Où jouer au poker à Paris ? 53 lieux à moins de 30 km : 53 bars avec des tournois chaque semaine. Horaires, tarifs et adresses.">
-  <link rel="canonical" href="https://laplacepoker.fr/poker/paris.html">
+  <link rel="canonical" href="https://laplacepoker.fr/villes/paris.html">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="LaPlacePoker">
   <meta property="og:title" content="Poker à Paris : tournois, casinos et clubs | LaPlacePoker">
-  <meta property="og:description" content="Où jouer au poker à Paris ? 53 lieux à moins de 30 km : 53 bars avec des tournois chaque semaine. Horaires, tarifs et adresses.">
-  <meta property="og:url" content="https://laplacepoker.fr/poker/paris">
+  <meta property="og:description" content="Où jouer au poker à Paris ? 53 lieux à moins de 30 km. Horaires, tarifs et adresses.">
+  <meta property="og:url" content="https://laplacepoker.fr/villes/paris">
   <meta property="og:image" content="https://laplacepoker.fr/assets/img/Logo_base.png">
   <meta name="theme-color" content="#ffffff">
 
-  <!-- Polices Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- CSS de Leaflet -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="icon" type="image/x-icon" href="/assets/img/icon.ico">
+  
+  <!-- CSS global et CSS spécifique villes -->
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles3.css">
+  <link rel="icon" type="image/x-icon" href="../assets/img/icon.ico">
 </head>
 <body>
   <!-- En-tête de la page -->
   <header class="entete">
-    <a class="marque" href="/">
-      <img src="/assets/img/Logo_Inv_Vert.png" alt="" width="36" height="36">
+    <a class="marque" href="index.html">
+      <img src="../assets/img/Logo_Inv_Vert.png" alt="" width="36" height="36">
       <span>LaPlace<b>Poker</b></span>
     </a>
     <nav class="nav" aria-label="Navigation principale">
-      <a href="/carte">Carte</a>
-      <a href="/contact">À propos</a>
+      <a href="/">Accueil</a>
+      <a href="carte.html">Carte</a>
+      <a href="contact.html">À propos</a>
     </nav>
     <button type="button" class="btn btn-primaire btn-proposer" data-proposer aria-label="Proposer un tournoi">
       <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg><span>Proposer un tournoi</span>
     </button>
+    <!-- Menu déroulant -->
+      <div class="dropdown">
+    <!-- C'est ce bouton qui appelle ta fonction toggleMenu(event) -->
+    <button type="button" class="btn-burger" onclick="toggleMenu(event)" aria-label="Menu principal">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="4" x2="20" y1="6" y2="6"/>
+        <line x1="4" x2="20" y1="12" y2="12"/>
+        <line x1="4" x2="20" y1="18" y2="18"/>
+      </svg>
+    </button>
+
+    <!-- Le menu que ton JS cible via getElementById("dropdown-content") -->
+    <div class="dropdown-content" id="dropdown-content">
+      <a href="contact.html">À propos & Contact</a>
+      <a href="mentions-legales.html">Mentions légales</a>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+    </div>
+  </div>
   </header>
 
-  <!-- Contenu principal -->
   <main>
     <section class="hero hero-ville">
       <div class="hero-contenu">
-        <nav class="fil" aria-label="Fil d'Ariane"><a href="/">Accueil</a><span>/</span><span aria-current="page">Poker à Paris</span></nav>
+        <nav class="fil" aria-label="Fil d'Ariane"><a href="../">Accueil</a><span>/</span><span aria-current="page">Poker à Paris</span></nav>
         <h1>Poker à Paris</h1>
         <p><strong>53 lieux</strong> où jouer au poker à moins de 30 km de Paris (Paris) : 53 bars avec des tournois chaque semaine.</p>
         <div class="raccourcis">
-          <a class="raccourci" href="/carte?ville=Paris"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.1 5.6a2 2 0 0 0 1.8 0l3.7-1.9a1 1 0 0 1 1.4.9v12.8a1 1 0 0 1-.6.9l-4.5 2.3a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.7 1.8a1 1 0 0 1-1.4-.9V6.6a1 1 0 0 1 .6-.9l4.5-2.3a2 2 0 0 1 1.8 0Z"/><path d="M15 5.8v15M9 3.2v15"/></svg>Voir sur la carte</a>
-          <a class="raccourci" href="/carte?ville=Paris"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Où jouer aujourd'hui</a>
+          <a class="raccourci" href="../carte?ville=Paris"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.1 5.6a2 2 0 0 0 1.8 0l3.7-1.9a1 1 0 0 1 1.4.9v12.8a1 1 0 0 1-.6.9l-4.5 2.3a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.7 1.8a1 1 0 0 1-1.4-.9V6.6a1 1 0 0 1 .6-.9l4.5-2.3a2 2 0 0 1 1.8 0Z"/><path d="M15 5.8v15M9 3.2v15"/></svg>Voir sur la carte</a>
+          <a class="raccourci" href="../carte?ville=Paris"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Où jouer aujourd'hui</a>
         </div>
       </div>
     </section>
 
     <div class="conteneur">
       <div class="bloc bloc-carte bloc-carte-ville"><div id="mini-carte" role="region" aria-label="Carte de Paris"></div></div>
+      
       <section class="section-ville">
-    <h2>Quel jour jouer au poker à Paris ?</h2>
-    <div class="semaine-type">
-      <div class="jour-type">
-        <h3>Lundi<span class="nb">10</span></h3>
-        <ul><li>Margen&#39;s Pub</li><li>L&#39;Entrepotes</li><li>Boom Boom (Villette)</li><li>Eva (Paris-Est)</li><li>Gloria II</li><li>Les Artistes Cuisineurs</li><li><a href="/carte?ville=Paris">+ 4 autres</a></li></ul>
-      </div>
-      <div class="jour-type">
-        <h3>Mardi<span class="nb">12</span></h3>
-        <ul><li>Oculto Paris</li><li>Food&amp;Tea</li><li>Gaston Laveur</li><li>Pappasito&#39;s</li><li>Le Café du Village (Paris)</li><li>Le Zéro six</li><li><a href="/carte?ville=Paris">+ 6 autres</a></li></ul>
-      </div>
-      <div class="jour-type">
-        <h3>Mercredi<span class="nb">7</span></h3>
-        <ul><li>IPN</li><li>J&#39;peux pas j&#39;ai poney</li><li>L’Entrepôtes (94)</li><li>La Bigouden (Rungis)</li><li>Chez Toine</li><li>EVA (Beauchamp)</li><li><a href="/carte?ville=Paris">+ 1 autres</a></li></ul>
-      </div>
-      <div class="jour-type">
-        <h3>Jeudi<span class="nb">12</span></h3>
-        <ul><li>L&#39;Etoile (Paris)</li><li>Le Bel Air</li><li>Le Méditérranéen</li><li>Volfoni (Bourg-la-Reine)</li><li>Bowling de Nogent</li><li>Brewpub La Française</li><li><a href="/carte?ville=Paris">+ 6 autres</a></li></ul>
-      </div>
-      <div class="jour-type">
-        <h3>Vendredi<span class="nb">2</span></h3>
-        <ul><li>Brasserie Le Netter</li><li>O&#39;Café (Achères)</li></ul>
-      </div>
-      <div class="jour-type">
-        <h3>Samedi<span class="nb">1</span></h3>
-        <ul><li>L&#39;Ilot</li></ul>
-      </div>
-      <div class="jour-type">
-        <h3>Dimanche<span class="nb">2</span></h3>
-        <ul><li>Le Sputnik</li><li>Le Café des sports (Paris)</li></ul>
-      </div>
-    </div>
-  </section>
-      <section class="section-ville"><h2>Tournois en bar</h2>
-<div class="grille-cartes">
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">0,3 km</span>
-    </div>
-    <h3 class="fiche-titre">Oculto Paris</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2150" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.860106,2.34998" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">0,8 km</span>
-    </div>
-    <h3 class="fiche-titre">Food&amp;Tea</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1908" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.851451,2.344514" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">1,7 km</span>
-    </div>
-    <h3 class="fiche-titre">IPN</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mercredis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/742" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.844149,2.349452" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">1,8 km</span>
-    </div>
-    <h3 class="fiche-titre">Margen&#39;s Pub</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les lundis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1881" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.842467,2.349851" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">2,5 km</span>
-    </div>
-    <h3 class="fiche-titre">L&#39;Ilot</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les samedis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1644" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.838093,2.360091" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">2,6 km</span>
-    </div>
-    <h3 class="fiche-titre">Gaston Laveur</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1324" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.864968,2.38181" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">2,9 km</span>
-    </div>
-    <h3 class="fiche-titre">Pappasito&#39;s</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2247" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.884313,2.339843" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">3,2 km</span>
-    </div>
-    <h3 class="fiche-titre">Le Café du Village (Paris)</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1240" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.831114,2.3582" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">3,4 km</span>
-    </div>
-    <h3 class="fiche-titre">Le Zéro six</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1937" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.889027,2.346584" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">3,4 km</span>
-    </div>
-    <h3 class="fiche-titre">La Maison (Paris 17)</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tournois réguliers</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2002" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.883053,2.318513" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">3,5 km</span>
-    </div>
-    <h3 class="fiche-titre">Le Sputnik</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Prochain : dimanche 11 octobre à 17h</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1251" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.827976,2.351042" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">3,5 km</span>
-    </div>
-    <h3 class="fiche-titre">Le Café des sports (Paris)</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les dimanches</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1592" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.869129,2.392103" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">3,6 km</span>
-    </div>
-    <h3 class="fiche-titre">L&#39;Entrepotes</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les lundis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1155" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.887836,2.325303" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">4,1 km</span>
-    </div>
-    <h3 class="fiche-titre">J&#39;peux pas j&#39;ai poney</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mercredis à 19h</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1684" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.840045,2.394507" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">4,3 km</span>
-    </div>
-    <h3 class="fiche-titre">L&#39;Etoile (Paris)</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1267" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.886902,2.386647" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">4,3 km</span>
-    </div>
-    <h3 class="fiche-titre">La CangTing</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2152" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.892108,2.316672" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">4,5 km</span>
-    </div>
-    <h3 class="fiche-titre">Brasserie Le Netter</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les vendredis à 19h30</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1771" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.847051,2.406392" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">4,6 km</span>
-    </div>
-    <h3 class="fiche-titre">Le Bel Air</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/964" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.845112,2.406072" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">5,1 km</span>
-    </div>
-    <h3 class="fiche-titre">Boom Boom (Villette)</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les lundis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2302" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.897239,2.385533" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">5,7 km</span>
-    </div>
-    <h3 class="fiche-titre">Eva (Paris-Est)</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les lundis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2005" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.859058,2.425345" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">7,2 km</span>
-    </div>
-    <h3 class="fiche-titre">L’Entrepôtes (94)</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mercredis à 19h30</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/916" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.815242,2.419209" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">8,1 km</span>
-    </div>
-    <h3 class="fiche-titre">Gloria II</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les lundis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2329" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.825754,2.248836" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">8,2 km</span>
-    </div>
-    <h3 class="fiche-titre">Le Tarbouche</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2223" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.825513,2.247489" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">8,4 km</span>
-    </div>
-    <h3 class="fiche-titre">Le Méditérranéen</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1920" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.80462,2.427295" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">9,4 km</span>
-    </div>
-    <h3 class="fiche-titre">Volfoni (Bourg-la-Reine)</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1963" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.777015,2.313942" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">9,9 km</span>
-    </div>
-    <h3 class="fiche-titre">Bowling de Joinville-Le-Pont</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tournois réguliers</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1845" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.82966,2.474687" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">10 km</span>
-    </div>
-    <h3 class="fiche-titre">Les Artistes Cuisineurs</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les lundis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2222" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.819684,2.475411" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">11 km</span>
-    </div>
-    <h3 class="fiche-titre">Bowling de Nogent</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1846" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.831897,2.490088" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">12 km</span>
-    </div>
-    <h3 class="fiche-titre">La Bigouden (Rungis)</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mercredis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2304" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.748986,2.35141" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">13 km</span>
-    </div>
-    <h3 class="fiche-titre">Antrechoc</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tournois réguliers</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1148" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.786864,2.478223" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">13 km</span>
-    </div>
-    <h3 class="fiche-titre">Au bureau (Vélizy)</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les lundis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1934" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.780884,2.218117" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">13 km</span>
-    </div>
-    <h3 class="fiche-titre">Brewpub La Française</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis à 19h30</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1321" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.84935,2.524328" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">13 km</span>
-    </div>
-    <h3 class="fiche-titre">Chez Toine</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mercredis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1520" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.840061,2.527398" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">16 km</span>
-    </div>
-    <h3 class="fiche-titre">Le colisée by Massimo</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les lundis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1781" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.988918,2.259085" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">18 km</span>
-    </div>
-    <h3 class="fiche-titre">Santa Monica</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/186" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.945147,2.144532" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">20 km</span>
-    </div>
-    <h3 class="fiche-titre">La Villa de Noisiel</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1736" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.843127,2.61561" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">20 km</span>
-    </div>
-    <h3 class="fiche-titre">Del Arte (Pontault-Combault)</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tournois réguliers</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1910" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.778138,2.587237" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">20 km</span>
-    </div>
-    <h3 class="fiche-titre">Chic Pub</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1723" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.005377,2.177246" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">21 km</span>
-    </div>
-    <h3 class="fiche-titre">Noble jour &amp; Nuit</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2185" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.747187,2.117719" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">21 km</span>
-    </div>
-    <h3 class="fiche-titre">Anjoy</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2133" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.70702,2.527347" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">22 km</span>
-    </div>
-    <h3 class="fiche-titre">EVA (Beauchamp)</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mercredis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2341" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.017072,2.177106" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">22 km</span>
-    </div>
-    <h3 class="fiche-titre">The Backyard 94</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2310" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.719961,2.565684" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">23 km</span>
-    </div>
-    <h3 class="fiche-titre">O&#39;Café (Achères)</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les vendredis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1721" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.971379,2.079721" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">24 km</span>
-    </div>
-    <h3 class="fiche-titre">Le Donjon</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2226" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.751254,2.623434" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">24 km</span>
-    </div>
-    <h3 class="fiche-titre">Del Arte (Chambourcy)</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1686" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.911264,2.034632" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">24 km</span>
-    </div>
-    <h3 class="fiche-titre">La Tartine Ludique</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tournois réguliers</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1539" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.646445,2.329136" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">24 km</span>
-    </div>
-    <h3 class="fiche-titre">Smile World (Montigny)</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les lundis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1633" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.78292,2.042535" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">25 km</span>
-    </div>
-    <h3 class="fiche-titre">At The Mos Bar</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mercredis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2193" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.947583,2.659305" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">25 km</span>
-    </div>
-    <h3 class="fiche-titre">Le Noa</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1895" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.007348,2.086299" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">26 km</span>
-    </div>
-    <h3 class="fiche-titre">A l&#39;Endroit (Conflans)</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tournois réguliers</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1513" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.006561,2.076415" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">26 km</span>
-    </div>
-    <h3 class="fiche-titre">Le Mangabar</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1424" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=48.768032,2.02363" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">26 km</span>
-    </div>
-    <h3 class="fiche-titre">Chester Pub (Saint-Ouen-l&#39;Aumône)</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tournois réguliers</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1940" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.047461,2.133108" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-<article class="card"><div class="fiche-haut">
-      <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
-      <span class="distance">30 km</span>
-    </div>
-    <h3 class="fiche-titre">Au Parc Fleuri</h3>
-    <ul class="infos">
-      
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les lundis</span></li>
-      <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
-    </ul>
-    
-    <div class="actions"><a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1431" target="_blank" rel="noopener noreferrer">Voir la page du bar</a><a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.111491,2.212146" target="_blank" rel="noopener noreferrer"><svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire</a></div></article>
-</div>
-</section>
+        <h2>Quel jour jouer au poker à Paris ?</h2>
+        <div class="semaine-type">
+          
+            <div class="jour-type">
+              <h3>Lundi<span class="nb">13</span></h3>
+              <ul><li>Margen's Pub</li><li>Le Sputnik</li><li>L'Entrepotes</li><li>Brasserie Le Netter</li><li>Boom Boom (Villette)</li><li>Eva (Paris-Est)</li><li>L’Entrepôtes (94)</li><li>Gloria II</li><li>Le Tarbouche</li><li>Les Artistes Cuisineurs</li><li>Au bureau (Vélizy)</li><li>Le colisée by Massimo</li><li>Smile World (Montigny)</li></ul>
+            </div>
+            <div class="jour-type">
+              <h3>Mardi<span class="nb">12</span></h3>
+              <ul><li>Oculto Paris</li><li>Food&Tea</li><li>Le Café du Village (Paris)</li><li>Pappasito's</li><li>Le Zéro six</li><li>La CangTing</li><li>Le Tarbouche</li><li>Brewpub La Française</li><li>Santa Monica</li><li>Chic Pub</li><li>The Backyard 94</li><li>Le Mangabar</li></ul>
+            </div>
+            <div class="jour-type">
+              <h3>Mercredi<span class="nb">10</span></h3>
+              <ul><li>IPN</li><li>Gaston Laveur</li><li>J'peux pas j'ai poney</li><li>Le Zéro six</li><li>La CangTing</li><li>L’Entrepôtes (94)</li><li>La Bigouden (Rungis)</li><li>Chez Toine</li><li>EVA (Beauchamp)</li><li>At The Mos Bar</li></ul>
+            </div>
+            <div class="jour-type">
+              <h3>Jeudi<span class="nb">15</span></h3>
+              <ul><li>Margen's Pub</li><li>Gaston Laveur</li><li>Le Bel Air</li><li>L'Etoile (Paris)</li><li>Le Méditérranéen</li><li>Volfoni (Bourg-la-Reine)</li><li>Bowling de Nogent</li><li>Brewpub La Française</li><li>Le Nova Klub</li><li>La Villa de Noisiel</li><li>Anjoy</li><li>Noble jour & Nuit</li><li>Le Donjon</li><li>Del Arte (Chambourcy)</li><li>Le Noa</li></ul>
+            </div>
+            <div class="jour-type">
+              <h3>Vendredi<span class="nb">3</span></h3>
+              <ul><li>IPN</li><li>Brasserie Le Netter</li><li>O'Café (Achères)</li></ul>
+            </div>
+            <div class="jour-type">
+              <h3>Samedi<span class="nb">2</span></h3>
+              <ul><li>IPN</li><li>L'Ilot</li></ul>
+            </div>
+            <div class="jour-type">
+              <h3>Dimanche<span class="nb">4</span></h3>
+              <ul><li>Le Sputnik</li><li>Le Café des sports (Paris)</li><li>J'peux pas j'ai poney</li><li>L'Entrepotes</li></ul>
+            </div>
+        </div>
+      </section>
+
+      <section class="section-ville">
+        <h2>Tournois & Établissements</h2>
+        <div class="grille-cartes">
+          
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">0,4 km</span>
+              </div>
+              <h3 class="fiche-titre">Oculto Paris</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2150" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.860106,2.34998" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">0,8 km</span>
+              </div>
+              <h3 class="fiche-titre">Food&Tea</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1908" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.851451,2.344514" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">1,4 km</span>
+              </div>
+              <h3 class="fiche-titre">IPN</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mercredis, vendredis et samedis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/742" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.844149,2.349452" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">1,6 km</span>
+              </div>
+              <h3 class="fiche-titre">Margen's Pub</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis et lundis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1881" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.842467,2.349851" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">2,1 km</span>
+              </div>
+              <h3 class="fiche-titre">L'Ilot</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les samedis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1644" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.838093,2.360091" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">2,4 km</span>
+              </div>
+              <h3 class="fiche-titre">Gaston Laveur</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mercredis et jeudis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1324" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.864968,2.38181" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">2,9 km</span>
+              </div>
+              <h3 class="fiche-titre">Le Café du Village (Paris)</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1240" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.831114,2.3582" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">3,2 km</span>
+              </div>
+              <h3 class="fiche-titre">Le Sputnik</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les dimanches et lundis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1251" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.827976,2.351042" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">3,2 km</span>
+              </div>
+              <h3 class="fiche-titre">Le Café des sports (Paris)</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les dimanches</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1592" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.869129,2.392103" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">3,2 km</span>
+              </div>
+              <h3 class="fiche-titre">Pappasito's</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2247" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.884313,2.339843" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">3,6 km</span>
+              </div>
+              <h3 class="fiche-titre">J'peux pas j'ai poney</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mercredis et dimanches</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1684" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.840045,2.394507" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">3,6 km</span>
+              </div>
+              <h3 class="fiche-titre">Le Zéro six</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mercredis et mardis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1937" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.889027,2.346584" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">3,8 km</span>
+              </div>
+              <h3 class="fiche-titre">La Maison (Paris 17)</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tournois réguliers</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2002" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.883053,2.318513" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">4,0 km</span>
+              </div>
+              <h3 class="fiche-titre">L'Entrepotes</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les dimanches et lundis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1155" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.887836,2.325303" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">4,1 km</span>
+              </div>
+              <h3 class="fiche-titre">Le Bel Air</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/964" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.845112,2.406072" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">4,1 km</span>
+              </div>
+              <h3 class="fiche-titre">Brasserie Le Netter</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les vendredis et lundis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1771" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.847051,2.406392" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">4,2 km</span>
+              </div>
+              <h3 class="fiche-titre">L'Etoile (Paris)</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1267" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.886902,2.386647" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">4,7 km</span>
+              </div>
+              <h3 class="fiche-titre">La CangTing</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mercredis et mardis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2152" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.892108,2.316672" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">5,1 km</span>
+              </div>
+              <h3 class="fiche-titre">Boom Boom (Villette)</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les lundis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2302" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.897239,2.385533" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">5,4 km</span>
+              </div>
+              <h3 class="fiche-titre">Eva (Paris-Est)</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les lundis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2005" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.859058,2.425345" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">6,7 km</span>
+              </div>
+              <h3 class="fiche-titre">L’Entrepôtes (94)</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mercredis et lundis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/916" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.815242,2.419209" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">8,0 km</span>
+              </div>
+              <h3 class="fiche-titre">Le Méditérranéen</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1920" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.80462,2.427295" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">8,3 km</span>
+              </div>
+              <h3 class="fiche-titre">Gloria II</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les lundis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2329" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.825754,2.248836" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">8,4 km</span>
+              </div>
+              <h3 class="fiche-titre">Le Tarbouche</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les lundis et mardis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2223" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.825513,2.247489" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">9,3 km</span>
+              </div>
+              <h3 class="fiche-titre">Volfoni (Bourg-la-Reine)</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1963" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.777015,2.313942" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">9,5 km</span>
+              </div>
+              <h3 class="fiche-titre">Bowling de Joinville-Le-Pont</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tournois réguliers</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1845" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.82966,2.474687" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">9,9 km</span>
+              </div>
+              <h3 class="fiche-titre">Les Artistes Cuisineurs</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les lundis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2222" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.819684,2.475411" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">10,5 km</span>
+              </div>
+              <h3 class="fiche-titre">Bowling de Nogent</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1846" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.831897,2.490088" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">12,0 km</span>
+              </div>
+              <h3 class="fiche-titre">La Bigouden (Rungis)</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mercredis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2304" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.748986,2.35141" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">12,1 km</span>
+              </div>
+              <h3 class="fiche-titre">Antrechoc</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tournois réguliers</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1148" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.786864,2.478223" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">12,6 km</span>
+              </div>
+              <h3 class="fiche-titre">Brewpub La Française</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis et mardis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1321" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.84935,2.524328" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">12,9 km</span>
+              </div>
+              <h3 class="fiche-titre">Au bureau (Vélizy)</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les lundis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1934" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.780884,2.218117" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">13,0 km</span>
+              </div>
+              <h3 class="fiche-titre">Chez Toine</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mercredis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1520" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.840061,2.527398" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">13,3 km</span>
+              </div>
+              <h3 class="fiche-titre">Le Nova Klub</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2381" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.800076,2.191555" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">16,2 km</span>
+              </div>
+              <h3 class="fiche-titre">Le colisée by Massimo</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les lundis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1781" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.988918,2.259085" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">18,1 km</span>
+              </div>
+              <h3 class="fiche-titre">Santa Monica</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/186" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.945147,2.144532" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">19,3 km</span>
+              </div>
+              <h3 class="fiche-titre">La Villa de Noisiel</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1736" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.843127,2.61561" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">19,3 km</span>
+              </div>
+              <h3 class="fiche-titre">Del Arte (Pontault-Combault)</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tournois réguliers</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1910" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.778138,2.587237" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">20,9 km</span>
+              </div>
+              <h3 class="fiche-titre">Chic Pub</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1723" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=49.005377,2.177246" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">21,0 km</span>
+              </div>
+              <h3 class="fiche-titre">Anjoy</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2133" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.70702,2.527347" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">21,0 km</span>
+              </div>
+              <h3 class="fiche-titre">Noble jour & Nuit</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2185" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.747187,2.117719" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">21,8 km</span>
+              </div>
+              <h3 class="fiche-titre">The Backyard 94</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2310" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.719961,2.565684" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">22,0 km</span>
+              </div>
+              <h3 class="fiche-titre">EVA (Beauchamp)</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mercredis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2341" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=49.017072,2.177106" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">23,1 km</span>
+              </div>
+              <h3 class="fiche-titre">Le Donjon</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2226" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.751254,2.623434" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">23,4 km</span>
+              </div>
+              <h3 class="fiche-titre">La Tartine Ludique</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tournois réguliers</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1539" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.646445,2.329136" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">23,7 km</span>
+              </div>
+              <h3 class="fiche-titre">O'Café (Achères)</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les vendredis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1721" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.971379,2.079721" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">24,0 km</span>
+              </div>
+              <h3 class="fiche-titre">Del Arte (Chambourcy)</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1686" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.911264,2.034632" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">24,1 km</span>
+              </div>
+              <h3 class="fiche-titre">Smile World (Montigny)</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les lundis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1633" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.78292,2.042535" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">24,6 km</span>
+              </div>
+              <h3 class="fiche-titre">At The Mos Bar</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mercredis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/2193" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.947583,2.659305" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">25,7 km</span>
+              </div>
+              <h3 class="fiche-titre">Le Noa</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les jeudis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1895" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=49.007348,2.086299" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">26,0 km</span>
+              </div>
+              <h3 class="fiche-titre">Le Mangabar</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tous les mardis</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1424" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=48.768032,2.02363" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">26,2 km</span>
+              </div>
+              <h3 class="fiche-titre">A l'Endroit (Conflans)</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tournois réguliers</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1513" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=49.006561,2.076415" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
+                <span class="distance">26,6 km</span>
+              </div>
+              <h3 class="fiche-titre">Chester Pub (Saint-Ouen-l'Aumône)</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Tournois réguliers</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Gratuit · Tournois</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1940" target="_blank" rel="noopener noreferrer">Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=49.047461,2.133108" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+        </div>
+      </section>
     </div>
   </main>
 
-  <!-- Pied de page -->
   <footer class="pied">
     <p>Jouer comporte des risques : endettement, isolement, dépendance. Pour être aidé, appelez le <a href="tel:0974751313">09 74 75 13 13</a> (appel non surtaxé).</p>
     <nav aria-label="Liens du site">
-      <a href="/contact">À propos & contact</a>
-      <a href="/mentions-legales">Mentions légales</a>
-      <a href="/politique-confidentialite">Confidentialité</a>
+      <a href="../contact">À propos & contact</a>
+      <a href="../mentions-legales">Mentions légales</a>
+      <a href="../politique-confidentialite">Confidentialité</a>
     </nav>
   </footer>
 
-  <!-- Fenêtre qui affiche le formulaire pour les organisateurs de tournois caritatifs -->
   <dialog id="dlg-tournoi" aria-labelledby="dlg-titre">
     <div class="dlg-barre">
       <h2 id="dlg-titre">Proposer un tournoi associatif</h2>
       <button type="button" id="dlg-close">Fermer</button>
     </div>
     <div class="dlg-corps">
-      <p id="dlg-msg" hidden>Le formulaire n'est pas encore configuré.</p>
       <iframe id="dlg-frame" title="Formulaire pour proposer un tournoi associatif" hidden></iframe>
-      <a id="dlg-lien" href="#" target="_blank" rel="noopener noreferrer" hidden>Ouvrir le formulaire dans un nouvel onglet</a>
     </div>
   </dialog>
 
-  <!-- Script externe Leaflet -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="villes.js" defer></script>
   <script>
-    // Fenêtre "Proposer un tournoi" : le formulaire ne se charge qu'à l'ouverture
-    const URL_FORMULAIRE = "https://docs.google.com/forms/d/e/1FAIpQLSd1D3HN-joemrjvV5pYSA-wbXtF3-YDajahuXe4At9rseTJIA/viewform?embedded=true";
-    const dlg = document.getElementById("dlg-tournoi");
-
-    document.querySelectorAll("[data-proposer]").forEach(btn => btn.addEventListener("click", () => {
-      const frame = document.getElementById("dlg-frame");
-      if (!frame.src) { frame.src = URL_FORMULAIRE; frame.hidden = false; }
-      dlg.showModal();
-    }));
-
-    document.getElementById("dlg-close").addEventListener("click", () => dlg.close());
-
-    // Petite carte : les lieux de cette page (latitude, longitude, couleur, nom)
-    const LIEUX = [
-      [48.860106, 2.34998, "#e11d48", "Oculto Paris"],
-      [48.851451, 2.344514, "#e11d48", "Food&Tea"],
-      [48.844149, 2.349452, "#e11d48", "IPN"],
-      [48.842467, 2.349851, "#e11d48", "Margen's Pub"],
-      [48.838093, 2.360091, "#e11d48", "L'Ilot"],
-      [48.864968, 2.38181, "#e11d48", "Gaston Laveur"],
-      [48.884313, 2.339843, "#e11d48", "Pappasito's"],
-      [48.831114, 2.3582, "#e11d48", "Le Café du Village (Paris)"],
-      [48.889027, 2.346584, "#e11d48", "Le Zéro six"],
-      [48.883053, 2.318513, "#e11d48", "La Maison (Paris 17)"],
-      [48.827976, 2.351042, "#e11d48", "Le Sputnik"],
-      [48.869129, 2.392103, "#e11d48", "Le Café des sports (Paris)"],
-      [48.887836, 2.325303, "#e11d48", "L'Entrepotes"],
-      [48.840045, 2.394507, "#e11d48", "J'peux pas j'ai poney"],
-      [48.886902, 2.386647, "#e11d48", "L'Etoile (Paris)"],
-      [48.892108, 2.316672, "#e11d48", "La CangTing"],
-      [48.847051, 2.406392, "#e11d48", "Brasserie Le Netter"],
-      [48.845112, 2.406072, "#e11d48", "Le Bel Air"],
-      [48.897239, 2.385533, "#e11d48", "Boom Boom (Villette)"],
-      [48.859058, 2.425345, "#e11d48", "Eva (Paris-Est)"],
-      [48.815242, 2.419209, "#e11d48", "L’Entrepôtes (94)"],
-      [48.825754, 2.248836, "#e11d48", "Gloria II"],
-      [48.825513, 2.247489, "#e11d48", "Le Tarbouche"],
-      [48.80462, 2.427295, "#e11d48", "Le Méditérranéen"],
-      [48.777015, 2.313942, "#e11d48", "Volfoni (Bourg-la-Reine)"],
-      [48.82966, 2.474687, "#e11d48", "Bowling de Joinville-Le-Pont"],
-      [48.819684, 2.475411, "#e11d48", "Les Artistes Cuisineurs"],
-      [48.831897, 2.490088, "#e11d48", "Bowling de Nogent"],
-      [48.748986, 2.35141, "#e11d48", "La Bigouden (Rungis)"],
-      [48.786864, 2.478223, "#e11d48", "Antrechoc"],
-      [48.780884, 2.218117, "#e11d48", "Au bureau (Vélizy)"],
-      [48.84935, 2.524328, "#e11d48", "Brewpub La Française"],
-      [48.840061, 2.527398, "#e11d48", "Chez Toine"],
-      [48.988918, 2.259085, "#e11d48", "Le colisée by Massimo"],
-      [48.945147, 2.144532, "#e11d48", "Santa Monica"],
-      [48.843127, 2.61561, "#e11d48", "La Villa de Noisiel"],
-      [48.778138, 2.587237, "#e11d48", "Del Arte (Pontault-Combault)"],
-      [49.005377, 2.177246, "#e11d48", "Chic Pub"],
-      [48.747187, 2.117719, "#e11d48", "Noble jour & Nuit"],
-      [48.70702, 2.527347, "#e11d48", "Anjoy"],
-      [49.017072, 2.177106, "#e11d48", "EVA (Beauchamp)"],
-      [48.719961, 2.565684, "#e11d48", "The Backyard 94"],
-      [48.971379, 2.079721, "#e11d48", "O'Café (Achères)"],
-      [48.751254, 2.623434, "#e11d48", "Le Donjon"],
-      [48.911264, 2.034632, "#e11d48", "Del Arte (Chambourcy)"],
-      [48.646445, 2.329136, "#e11d48", "La Tartine Ludique"],
-      [48.78292, 2.042535, "#e11d48", "Smile World (Montigny)"],
-      [48.947583, 2.659305, "#e11d48", "At The Mos Bar"],
-      [49.007348, 2.086299, "#e11d48", "Le Noa"],
-      [49.006561, 2.076415, "#e11d48", "A l'Endroit (Conflans)"],
-      [48.768032, 2.02363, "#e11d48", "Le Mangabar"],
-      [49.047461, 2.133108, "#e11d48", "Chester Pub (Saint-Ouen-l'Aumône)"],
-      [49.111491, 2.212146, "#e11d48", "Au Parc Fleuri"]
-    ];
-
-    const carte = L.map("mini-carte", { scrollWheelZoom: false, dragging: !L.Browser.mobile, tap: false });
-    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      className: "tuiles-douces",
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(carte);
-
-    LIEUX.forEach(([lat, lng, couleur, nom]) => {
-      L.marker([lat, lng], {
-        icon: L.divIcon({ className: "", html: `<div class="pion" style="--c:${couleur}"></div>`, iconSize: [24, 24], iconAnchor: [12, 12] }),
-        title: nom
-      }).bindTooltip(document.createTextNode(nom)).addTo(carte);
+    document.addEventListener("DOMContentLoaded", () => {
+      initMiniCarteVille([[48.860106, 2.34998, "#e11d48", "Oculto Paris"], [48.851451, 2.344514, "#e11d48", "Food&Tea"], [48.844149, 2.349452, "#e11d48", "IPN"], [48.842467, 2.349851, "#e11d48", "Margen's Pub"], [48.838093, 2.360091, "#e11d48", "L'Ilot"], [48.864968, 2.38181, "#e11d48", "Gaston Laveur"], [48.831114, 2.3582, "#e11d48", "Le Café du Village (Paris)"], [48.827976, 2.351042, "#e11d48", "Le Sputnik"], [48.869129, 2.392103, "#e11d48", "Le Café des sports (Paris)"], [48.884313, 2.339843, "#e11d48", "Pappasito's"], [48.840045, 2.394507, "#e11d48", "J'peux pas j'ai poney"], [48.889027, 2.346584, "#e11d48", "Le Zéro six"], [48.883053, 2.318513, "#e11d48", "La Maison (Paris 17)"], [48.887836, 2.325303, "#e11d48", "L'Entrepotes"], [48.845112, 2.406072, "#e11d48", "Le Bel Air"], [48.847051, 2.406392, "#e11d48", "Brasserie Le Netter"], [48.886902, 2.386647, "#e11d48", "L'Etoile (Paris)"], [48.892108, 2.316672, "#e11d48", "La CangTing"], [48.897239, 2.385533, "#e11d48", "Boom Boom (Villette)"], [48.859058, 2.425345, "#e11d48", "Eva (Paris-Est)"], [48.815242, 2.419209, "#e11d48", "L’Entrepôtes (94)"], [48.80462, 2.427295, "#e11d48", "Le Méditérranéen"], [48.825754, 2.248836, "#e11d48", "Gloria II"], [48.825513, 2.247489, "#e11d48", "Le Tarbouche"], [48.777015, 2.313942, "#e11d48", "Volfoni (Bourg-la-Reine)"], [48.82966, 2.474687, "#e11d48", "Bowling de Joinville-Le-Pont"], [48.819684, 2.475411, "#e11d48", "Les Artistes Cuisineurs"], [48.831897, 2.490088, "#e11d48", "Bowling de Nogent"], [48.748986, 2.35141, "#e11d48", "La Bigouden (Rungis)"], [48.786864, 2.478223, "#e11d48", "Antrechoc"], [48.84935, 2.524328, "#e11d48", "Brewpub La Française"], [48.780884, 2.218117, "#e11d48", "Au bureau (Vélizy)"], [48.840061, 2.527398, "#e11d48", "Chez Toine"], [48.800076, 2.191555, "#e11d48", "Le Nova Klub"], [48.988918, 2.259085, "#e11d48", "Le colisée by Massimo"], [48.945147, 2.144532, "#e11d48", "Santa Monica"], [48.843127, 2.61561, "#e11d48", "La Villa de Noisiel"], [48.778138, 2.587237, "#e11d48", "Del Arte (Pontault-Combault)"], [49.005377, 2.177246, "#e11d48", "Chic Pub"], [48.70702, 2.527347, "#e11d48", "Anjoy"], [48.747187, 2.117719, "#e11d48", "Noble jour & Nuit"], [48.719961, 2.565684, "#e11d48", "The Backyard 94"], [49.017072, 2.177106, "#e11d48", "EVA (Beauchamp)"], [48.751254, 2.623434, "#e11d48", "Le Donjon"], [48.646445, 2.329136, "#e11d48", "La Tartine Ludique"], [48.971379, 2.079721, "#e11d48", "O'Café (Achères)"], [48.911264, 2.034632, "#e11d48", "Del Arte (Chambourcy)"], [48.78292, 2.042535, "#e11d48", "Smile World (Montigny)"], [48.947583, 2.659305, "#e11d48", "At The Mos Bar"], [49.007348, 2.086299, "#e11d48", "Le Noa"], [48.768032, 2.02363, "#e11d48", "Le Mangabar"], [49.006561, 2.076415, "#e11d48", "A l'Endroit (Conflans)"], [49.047461, 2.133108, "#e11d48", "Chester Pub (Saint-Ouen-l'Aumône)"]], 48.8566, 2.3522);
     });
-
-    // Cadrage : 30 km autour de Paris
-    carte.fitBounds(L.latLng(48.8589, 2.347).toBounds(60000));
   </script>
 </body>
 </html>
