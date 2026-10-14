@@ -33,9 +33,8 @@
       <span>LaPlace<b>Poker</b></span>
     </a>
     <nav class="nav" aria-label="Navigation principale">
-      <a href="/">Accueil</a>
-      <a href="carte.html">Carte</a>
-      <a href="contact.html">À propos</a>
+      <a href="../">Accueil</a>
+      <a href="../carte.html">Carte</a>
     </nav>
     <button type="button" class="btn btn-primaire btn-proposer" data-proposer aria-label="Proposer un tournoi">
       <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg><span>Proposer un tournoi</span>
@@ -56,6 +55,7 @@
       <a href="contact.html">À propos & Contact</a>
       <a href="mentions-legales.html">Mentions légales</a>
       <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      <a href="#" class="lien-proposer-mobile" data-proposer>Proposer un tournoi</a>
     </div>
   </div>
   </header>
@@ -68,7 +68,6 @@
         <p><strong>23 lieux</strong> où jouer au poker à moins de 30 km de Lille (Nord) : 22 bars avec des tournois chaque semaine.</p>
         <div class="raccourcis">
           <a class="raccourci" href="../carte?ville=Lille"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.1 5.6a2 2 0 0 0 1.8 0l3.7-1.9a1 1 0 0 1 1.4.9v12.8a1 1 0 0 1-.6.9l-4.5 2.3a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.7 1.8a1 1 0 0 1-1.4-.9V6.6a1 1 0 0 1 .6-.9l4.5-2.3a2 2 0 0 1 1.8 0Z"/><path d="M15 5.8v15M9 3.2v15"/></svg>Voir sur la carte</a>
-          <a class="raccourci" href="../carte?ville=Lille"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Où jouer aujourd'hui</a>
         </div>
       </div>
     </section>
@@ -531,6 +530,7 @@
   </dialog>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="../app.js" defer></script>
   <script src="villes.js" defer></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {

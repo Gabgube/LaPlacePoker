@@ -1,19 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Page d'accueil -->
   <url>
     <loc>https://laplacepoker.fr/</loc>
     <priority>1.0</priority>
   </url>
+
+  <!-- Carte interactive -->
   <url>
-    <loc>https://laplacepoker.fr/contact.html</loc>
+    <loc>https://laplacepoker.fr/carte.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Pages Villes (SEO) -->
+  <url>
+    <loc>https://laplacepoker.fr/villes/paris.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://laplacepoker.fr/mentions-legales.html</loc>
+    <loc>https://laplacepoker.fr/villes/marseille.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://laplacepoker.fr/villes/lyon.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://laplacepoker.fr/villes/toulouse.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://laplacepoker.fr/villes/nice.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://laplacepoker.fr/villes/nantes.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://laplacepoker.fr/villes/montpellier.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://laplacepoker.fr/villes/strasbourg.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://laplacepoker.fr/villes/bordeaux.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://laplacepoker.fr/villes/lille.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Pages institutionnelles -->
+  <url>
+    <loc>https://laplacepoker.fr/contact.html</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://laplacepoker.fr/politique-confidentialite.html</loc>
-    <priority>0.5</priority>
+    <loc>https://laplacepoker.fr/mentions-legales.html</loc>
+    <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://laplacepoker.fr/politique-confidentialite.html</loc>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>

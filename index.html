@@ -36,11 +36,11 @@
     <nav class="nav" aria-label="Navigation principale">
       <a href="/">Accueil</a>
       <a href="carte.html">Carte</a>
-      <a href="contact.html">À propos</a>
     </nav>
     <button type="button" class="btn btn-primaire btn-proposer" data-proposer aria-label="Proposer un tournoi">
       <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg><span>Proposer un tournoi</span>
     </button>
+
     <!-- Menu déroulant -->
       <div class="dropdown">
     <!-- C'est ce bouton qui appelle ta fonction toggleMenu(event) -->
@@ -57,6 +57,7 @@
       <a href="contact.html">À propos & Contact</a>
       <a href="mentions-legales.html">Mentions légales</a>
       <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      <a href="#" class="lien-proposer-mobile" data-proposer>Proposer un tournoi</a>
     </div>
   </div>
   </header>
@@ -67,7 +68,7 @@
       <div class="hero-contenu">
         <span class="surtitre">Le poker live en France</span>
         <h1>Trouvez où jouer au poker près de chez vous</h1>
-        <p>Tournois gratuits en bar, casinos, clubs et tournois associatifs : <strong>713 lieux</strong> réunis au même endroit.</p>
+        <p>Tournois gratuits en bar, casinos, clubs et tournois associatifs : <strong><span id="stat-total">0</span> lieux</strong> réunis au même endroit.</p>
 
         <form class="recherche recherche-grande" action="carte.html" method="get" role="search">
           <svg class="ico" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
@@ -78,7 +79,6 @@
 
         <div class="raccourcis">
           <a class="raccourci" href="carte.html?autour=1"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h3M19 12h3M12 2v3M12 19v3"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/></svg>Autour de moi</a>
-          <a class="raccourci" href="carte.html"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Où jouer ce soir</a>
           <a class="raccourci" href="carte.html"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.1 5.6a2 2 0 0 0 1.8 0l3.7-1.9a1 1 0 0 1 1.4.9v12.8a1 1 0 0 1-.6.9l-4.5 2.3a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.7 1.8a1 1 0 0 1-1.4-.9V6.6a1 1 0 0 1 .6-.9l4.5-2.3a2 2 0 0 1 1.8 0Z"/><path d="M15 5.8v15M9 3.2v15"/></svg>Voir la carte</a>
         </div>
       </div>
@@ -92,13 +92,13 @@
         <a class="tuile" href="carte.html?type=associatif" style="--c:#2563eb">
           <span class="tuile-pastille"></span>
           <h3>Tournois associatifs</h3>
-          <p class="tuile-nb">8 tournois à venir</p>
+          <p class="tuile-nb"><span id="stat-assoc">0</span> tournois à venir</p>
           <p>Tournois caritatifs et associatifs près de chez vous</p>
         </a>
         <a class="tuile" href="carte.html?type=casino" style="--c:#1f2937">
           <span class="tuile-pastille"></span>
           <h3>Casinos</h3>
-          <p class="tuile-nb">52 lieux</p>
+          <p class="tuile-nb"><span id="stat-casinos">0</span> lieux</p>
           <p>Cash games et tournois dans les casinos</p>
         </a>
         <a class="tuile" href="contact.html" style="--c:#7c3aed">
@@ -109,8 +109,8 @@
         </a>
         <a class="tuile" href="carte.html?type=bar" style="--c:#e11d48">
           <span class="tuile-pastille"></span>
-          <h3>Bars Red Cactus</h3>
-          <p class="tuile-nb">653 lieux</p>
+          <h3>Bars RedCactus</h3>
+          <p class="tuile-nb"><span id="stat-bars">0</span> lieux</p>
           <p>Tournois gratuits chaque semaine dans les bars</p>
         </a>
       </div>
@@ -187,15 +187,13 @@
 
   <!-- Fenêtre qui affiche le formulaire pour les organisateurs de tournois caritatifs -->
   <dialog id="dlg-tournoi" aria-labelledby="dlg-titre">
-    <div class="dlg-barre">
-      <h2 id="dlg-titre">Proposer un tournoi associatif</h2>
-      <button type="button" id="dlg-close">Fermer</button>
-    </div>
-    <div class="dlg-corps">
-      <p id="dlg-msg" hidden>Le formulaire n'est pas encore configuré.</p>
-      <iframe id="dlg-frame" title="Formulaire pour proposer un tournoi associatif" hidden></iframe>
-      <a id="dlg-lien" href="#" target="_blank" rel="noopener noreferrer" hidden>Ouvrir le formulaire dans un nouvel onglet</a>
-    </div>
+  <div class="dlg-barre">
+    <h2 id="dlg-titre">Proposer un tournoi associatif</h2>
+    <button type="button" id="dlg-close">Fermer</button>
+  </div>
+  <div class="dlg-corps">
+    <iframe id="dlg-frame" title="Formulaire pour proposer un tournoi associatif" hidden></iframe>
+  </div>
   </dialog>
   
   <!-- Lien vers le fichier JavaScript -->

@@ -210,6 +210,11 @@ a { color: var(--btn-primary); }
   display: flex !important;
 }
 
+/* Masqué sur ordinateur le bouton proposer un tournoi*/
+.lien-proposer-mobile {
+  display: none !important;
+}
+
 /* Pied de page : message de prévention obligatoire */
 footer {
   padding: 14px 20px;
@@ -1574,4 +1579,18 @@ details[open] .texte-cacher {
 
   .semaine-type { grid-template-columns: 1fr 1fr; }
   .bloc-carte-ville, .bloc-carte-ville #mini-carte { height: 280px; min-height: 280px; }
+
+  /* 1. Masquer le bouton "Proposer un tournoi" du header sur mobile */
+  .entete > .btn-proposer {
+    display: none !important;
+  }
+
+  /* 2. Afficher le lien "Proposer un tournoi" à l'intérieur du menu déroulant */
+  .dropdown-content .lien-proposer-mobile {
+    display: block !important;
+  }
+
+  .dropdown {
+    margin-left: auto;
+  }
 }

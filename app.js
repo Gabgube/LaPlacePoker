@@ -4,7 +4,7 @@
 
 const TYPES = {
   bar:        { nom: "Bar Red Cactus", couleur: "#dc2626" }, // Rouge jeton
-  casino:     { nom: "Casino", couleur: "#18181b" },          // Noir jeton
+  casino:     { nom: "Casino", couleur: "#18181b" },           // Noir jeton
   associatif: { nom: "Tournoi associatif", couleur: "#1d4ed8" } // Bleu jeton
 };
 
@@ -49,6 +49,18 @@ function composerOuCopier(e, tel) {
   if (navigator.clipboard && tel) {
     navigator.clipboard.writeText(tel).catch(() => {});
   }
+}
+
+function mettreAJourCompteursAccueil(nbBars, nbCasinos, nbAssoc, nbTotal) {
+  const elTotal = document.getElementById("stat-total");
+  const elBars = document.getElementById("stat-bars");
+  const elCasinos = document.getElementById("stat-casinos");
+  const elAssoc = document.getElementById("stat-assoc");
+
+  if (elTotal) elTotal.textContent = nbTotal;
+  if (elBars) elBars.textContent = nbBars;
+  if (elCasinos) elCasinos.textContent = nbCasinos;
+  if (elAssoc) elAssoc.textContent = nbAssoc;
 }
 
 
@@ -142,77 +154,49 @@ function details(l) {
 // --- 4. CONFIGURATION & INITIALISATION LEAFLET ---
 // =========================================================
 
-L.Map.mergeOptions({ zoomControl: false });
-L.Map.addInitHook(function () { L.control.zoom({ position: "bottomright" }).addTo(this); });
-L.TileLayer.addInitHook(function () { this.options.attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'; });
-L.MarkerClusterGroup.mergeOptions({ showCoverageOnHover: false, maxClusterRadius: 50 });
-L.Popup.mergeOptions({ maxWidth: 320, minWidth: 260, autoPanPaddingTopLeft: [16, 16], autoPanPaddingBottomRight: [60, 16] });
+let map = null;
+let layer = null;
+let coucheRef = null;
 
-L.Map.addInitHook(function () {
-  const cadrerLeaflet = this.fitBounds;
-  this.fitBounds = function (zone, options) {
-    if (!Array.isArray(zone)) return cadrerLeaflet.call(this, zone, options); 
-    let cercle = null, points = [];
-    this.eachLayer(c => {
-      if (c instanceof L.Circle) cercle = c;
-      if (c instanceof L.MarkerClusterGroup) points = c.getLayers().map(m => m.getLatLng());
-    });
-    if (cercle) return cadrerLeaflet.call(this, cercle.getLatLng().toBounds(cercle.getRadius() * 2), { padding: [20, 20] });
-    points = points.filter(p => L.latLngBounds(zone).contains(p));
-    return points.length
-      ? cadrerLeaflet.call(this, L.latLngBounds(points), { padding: [30, 30], maxZoom: 13 })
-      : cadrerLeaflet.call(this, zone, options);
-  };
-});
+const elMap = document.getElementById("map");
 
-L.DivIcon.addInitHook(function () {
-  const o = this.options;
-  if (/class="chip"/.test(o.html)) Object.assign(o, { iconSize: [24, 24], iconAnchor: [12, 12], popupAnchor: [0, -12] });
-  if (o.className === "custom-cluster") {
-    const n = Number(o.html.replace(/\D/g, ""));
-    const taille = n < 10 ? 36 : n < 100 ? 42 : 48;
-    Object.assign(o, { iconSize: [taille, taille], iconAnchor: [taille / 2, taille / 2] });
-  }
-});
+if (elMap) {
+  L.Map.mergeOptions({ zoomControl: false });
+  L.Map.addInitHook(function () { L.control.zoom({ position: "bottomright" }).addTo(this); });
+  L.TileLayer.addInitHook(function () { this.options.attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'; });
+  L.MarkerClusterGroup.mergeOptions({ showCoverageOnHover: false, maxClusterRadius: 50 });
+  L.Popup.mergeOptions({ maxWidth: 320, minWidth: 260, autoPanPaddingTopLeft: [16, 16], autoPanPaddingBottomRight: [60, 16] });
 
-L.Popup.addInitHook(function () {
-  this.on("contentupdate", () => {
-    const titre = this.getElement().querySelector(".leaflet-popup-content > strong");
-    if (titre) lierNomCasino(titre);
-  });
-});
+  const LIMITES_FRANCE = [[41.3, -5.2], [51.1, 9.6]];
+  const BORNES_FRANCE_ET_DOMTOM = [[-32, -75], [56, 70]];
 
-const LIMITES_FRANCE = [[41.3, -5.2], [51.1, 9.6]];
+  map = L.map("map", {
+    minZoom: 3,
+    maxBounds: BORNES_FRANCE_ET_DOMTOM,
+    maxBoundsViscosity: 1.0
+  }).fitBounds(LIMITES_FRANCE);
 
-// Zone englobant la métropole ET tous les DOM-TOM (Antilles, Guyane, Réunion, Mayotte)
-const BORNES_FRANCE_ET_DOMTOM = [[-32, -75], [56, 70]];
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    minZoom: 3,
+    noWrap: true,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
 
-const map = L.map("map", {
-  minZoom: 3,                         // Empêche le dézoom excessif sur les côtés
-  maxBounds: BORNES_FRANCE_ET_DOMTOM,// Verrouille la caméra autour de la France et ses Outre-mer
-  maxBoundsViscosity: 1.0            // Bloque fermement les bordures (pas d'effet élastique)
-}).fitBounds(LIMITES_FRANCE);         // Centré sur la métropole au départ
+  layer = L.markerClusterGroup({
+    iconCreateFunction: function(cluster) {
+      const count = cluster.getChildCount();
+      return L.divIcon({
+        html: `<div><span>${count}</span></div>`,
+        className: 'custom-cluster',
+        iconSize: [40, 40],
+        iconAnchor: [20, 20]
+      });
+    }
+  }).addTo(map);
 
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  maxZoom: 19,
-  minZoom: 3,
-  noWrap: true,
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-
-const layer = L.markerClusterGroup({
-  iconCreateFunction: function(cluster) {
-    const count = cluster.getChildCount();
-    return L.divIcon({
-      html: `<div><span>${count}</span></div>`,
-      className: 'custom-cluster',
-      iconSize: [40, 40],
-      iconAnchor: [20, 20]
-    });
-  }
-}).addTo(map);
-
-const coucheRef = L.layerGroup().addTo(map);
+  coucheRef = L.layerGroup().addTo(map);
+}
 
 
 // =========================================================
@@ -331,13 +315,12 @@ Promise.all([
 ]).then(([dataRC, dataCasinos, dataCaritatifs]) => {
   const aujourdhui = new Date().toISOString().split('T')[0];
 
-  // Conversion propre des GeoJSON ou JSON simples
   const rawFeatures = dataRC.features || (Array.isArray(dataRC) ? dataRC : []);
   const redCactusFormates = rawFeatures.map(f => {
     if (f && f.geometry && Array.isArray(f.geometry.coordinates)) {
       return {
         id: f.id || f.properties?.id,
-        nom: f.properties?.nom || f.properties?.name || "Bar Red Cactus",
+        nom: f.properties?.nom || f.properties?.name || "Bar RedCactus",
         type: "bar",
         lat: f.geometry.coordinates[1],
         lng: f.geometry.coordinates[0],
@@ -356,7 +339,18 @@ Promise.all([
     .filter(c => !c.date || c.date >= aujourdhui);
 
   lieux = [...redCactusFormates, ...casinosValides, ...caritatifsValides];
-  afficher();
+
+  // --- MISE À JOUR DYNAMIQUE DES COMPTEURS ---
+  mettreAJourCompteursAccueil(
+    redCactusFormates.length,
+    casinosValides.length,
+    caritatifsValides.length,
+    lieux.length
+  );
+
+  if (typeof map !== 'undefined' && map) {
+    afficher();
+  }
 }).catch(err => console.error("Erreur globale :", err));
 
 
@@ -380,9 +374,23 @@ function definirReference(nouvelle) {
   const listEl = document.getElementById("list");
   
   if (ref) {
-    if (rayon()) {
-      L.circle([ref.lat, ref.lng], { radius: rayon() * 1000, color: "#0e7a4f", weight: 1.5, dashArray: "6 6", fillColor: "#0e7a4f", fillOpacity: 0.04, interactive: false }).addTo(coucheRef);
+    // --- CENTRAGE ET ZOOM AUTOMATIQUE SUR LA CARTE ---
+    if (rayon() > 0) {
+      const cercle = L.circle([ref.lat, ref.lng], {
+        radius: rayon() * 1000,
+        color: "#0e7a4f",
+        weight: 1.5,
+        dashArray: "6 6",
+        fillColor: "#0e7a4f",
+        fillOpacity: 0.04,
+        interactive: false
+      }).addTo(coucheRef);
+
+      map.flyToBounds(cercle.getBounds(), { padding: [20, 20], duration: 1.2 });
+    } else {
+      map.flyTo([ref.lat, ref.lng], 11, { duration: 1.2 });
     }
+
     L.marker([ref.lat, ref.lng], {
       icon: L.divIcon({ className: "", html: '<div class="point-ref"></div>', iconSize: [20, 20], iconAnchor: [10, 10] }),
       keyboard: false
@@ -543,15 +551,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnClose = document.getElementById("dlg-close");
   if (btnClose && dlg) btnClose.addEventListener("click", () => dlg.close());
 
-  // --- D. Lecture des paramètres URL ---
+  // --- D. Lecture des paramètres URL (?ville=Ancenis ou ?q=Ancenis) ---
   const params = new URLSearchParams(location.search);
   
   if (params.get("type") && fType) {
     fType.value = params.get("type");
   }
-  if (params.get("ville")) {
-    if (champVille) champVille.value = params.get("ville");
-    chercherVille(params.get("ville"));
+  
+  const villeParam = params.get("ville") || params.get("q");
+  if (villeParam) {
+    if (champVille) champVille.value = villeParam;
+    chercherVille(villeParam);
   } else if (params.get("autour")) {
     localiser();
   }
