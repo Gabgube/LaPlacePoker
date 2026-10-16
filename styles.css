@@ -1593,4 +1593,52 @@ details[open] .texte-cacher {
   .dropdown {
     margin-left: auto;
   }
+
+  @media (max-width: 860px) {
+
+  /* --- Réduction du conteneur de la popup Leaflet --- */
+  .leaflet-popup-content-wrapper {
+    border-radius: 12px;
+  }
+
+  .leaflet-popup-content {
+    margin: 10px 12px 10px !important;
+    max-width: 230px;
+  }
+
+  /* --- Réduction du titre --- */
+  #map .leaflet-popup-content > strong {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+
+  /* --- Réduction du badge (Type de lieu) --- */
+  #map .leaflet-popup-content .tag {
+    font-size: 0.7rem;
+    margin-bottom: 2px;
+  }
+
+  /* --- Réduction des lignes de texte (Adresse, Dates, Prix) --- */
+  #map .leaflet-popup-content .meta,
+  #map .leaflet-popup-content .tag-poker {
+    font-size: 0.78rem;
+    padding-left: 20px;
+  }
+
+  /* Réduction de la taille des petites icônes dans la popup */
+  #map .leaflet-popup-content .meta::before,
+  #map .leaflet-popup-content .tag-poker::before {
+    width: 14px;
+    height: 14px;
+    top: 2px;
+  }
+
+  /* --- Compactage des boutons en bas de la fiche --- */
+  #map .leaflet-popup-content .btn {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    margin-top: 4px;
+  }
+
+}
 }

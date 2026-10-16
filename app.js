@@ -386,9 +386,9 @@ function definirReference(nouvelle) {
         interactive: false
       }).addTo(coucheRef);
 
-      map.flyToBounds(cercle.getBounds(), { padding: [20, 20], duration: 1.2 });
+      map.flyToBounds(cercle.getBounds(), { padding: [20, 20], duration: 0.5 });
     } else {
-      map.flyTo([ref.lat, ref.lng], 11, { duration: 1.2 });
+      map.flyTo([ref.lat, ref.lng], 11, { duration: 0.5 });
     }
 
     L.marker([ref.lat, ref.lng], {
@@ -467,14 +467,23 @@ function localiser() {
 // =========================================================
 
 function toggleMenu(e) {
-  if (e) e.stopPropagation();
+  if (e) {
+    e.stopPropagation(); // Empêche la fermeture immédiate lors du clic sur le burger
+  }
   const menu = document.getElementById("dropdown-content");
   if (menu) menu.classList.toggle("show");
 }
 
-window.addEventListener("click", function () {
-  const menu = document.getElementById("dropdown-content");
-  if (menu) menu.classList.remove("show");
+// Fermeture du menu au clic/toucher n'importe où ailleurs sur mobile et desktop
+["click", "touchstart"].forEach(eventType => {
+  document.addEventListener(eventType, (e) => {
+    const dropdown = document.querySelector(".dropdown");
+    const menu = document.getElementById("dropdown-content");
+
+    if (dropdown && menu && !dropdown.contains(e.target)) {
+      menu.classList.remove("show");
+    }
+  });
 });
 
 

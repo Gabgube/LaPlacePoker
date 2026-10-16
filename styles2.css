@@ -90,7 +90,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Bouton / Lien "Retour à la carte" */
+/* --- Bouton "Retour à la carte" (intégré dans la carte au-dessus du titre sur ordinateur) --- */
 body > p:first-child {
   margin: 0;
 }
@@ -100,18 +100,24 @@ body > p:first-child a,
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  padding: 7px 14px;
+  margin-bottom: 20px;
+  background: var(--vert-clair);
   color: var(--brand-header);
+  border: 1px solid var(--vert-bord);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
   text-decoration: none;
-  font-weight: 700;
-  font-size: 0.95rem;
-  margin-bottom: 24px;
-  transition: opacity 0.15s ease;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 body > p:first-child a:hover,
 .btn-retour:hover {
-  opacity: 0.8;
-  text-decoration: underline;
+  background: #ffffff;
+  border-color: var(--btn-primary);
+  color: var(--btn-primary);
+  text-decoration: none;
 }
 
 /* Message de prévention, en bas de la carte blanche */
@@ -126,7 +132,6 @@ body > p:last-child {
   width: 100%;
 }
 
-/* La carte blanche est déjà le corps de la page */
 .content-card {
   background: none;
   border: 0;
@@ -182,12 +187,21 @@ body > p:last-child {
   text-decoration: none;
 }
 
-/* --- 5. Responsive Mobile --- */
+/* --- 5. Responsive Mobile (Option B) --- */
 @media (max-width: 860px) {
   body {
     max-width: none;
     margin: 20px 12px 40px;
-    padding: 26px 20px;
+    padding: 56px 20px 28px; /* On augmente le padding-top à 56px */
     border-radius: 18px;
+  }
+
+  .btn-retour {
+    position: fixed;
+    top: 14px;
+    left: 14px;
+    z-index: 1001;
+    margin-bottom: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 }
