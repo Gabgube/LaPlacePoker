@@ -31,7 +31,7 @@ const esc = s => String(s || '').replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt
 
 const sansAccents = s => s.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().trim();
 
-// Generateur de slug propre pour les URL de fiches casinos
+// Générateur de slug propre pour les URL de fiches casinos et lieux
 function slugify(texte) {
   if (!texte) return "";
   return texte
@@ -103,7 +103,7 @@ function boutonInscription(l) {
 
   if (typeof l.lat === "number" && typeof l.lng === "number") {
     const urlMaps = `https://www.google.com/maps/dir/?api=1&destination=${l.lat},${l.lng}`;
-    boutonsHtml += ` <a class="btn btn-maps" href="${urlMaps}" target="_blank" rel="noopener noreferrer">Y aller</a>`;
+    boutonsHtml += ` <a class="btn btn-maps" href="${urlMaps}" target="_blank" rel="noopener noreferrer">Itinéraire</a>`;
   }
 
   return boutonsHtml;
@@ -256,13 +256,10 @@ function afficher() {
       popupAnchor: [0, -15]
     });
 
-    // Génération du titre cliquable si c'est un casino
-    const titreFormatted = l.type === "casino" 
-      ? `<a href="lieu/${slugify(l.nom)}.html">${esc(l.nom)}</a>` 
-      : esc(l.nom);
+    const nomAffiche = esc(l.nom);
 
     const marker = L.marker([l.lat, l.lng], { icon, title: l.nom })
-      .bindPopup(`<strong>${titreFormatted}</strong><br>${details(l)}`)
+      .bindPopup(`<strong>${nomAffiche}</strong><br>${details(l)}`)
       .addTo(layer);
 
     if (list) {
@@ -270,7 +267,7 @@ function afficher() {
       card.className = "card";
       card.tabIndex = 0;
       card.style.setProperty("--c", t.couleur);
-      card.innerHTML = `<h2>${titreFormatted}</h2>${details(l)}`;
+      card.innerHTML = `<h2>${nomAffiche}</h2>${details(l)}`;
 
       const ouvrir = () => { map.setView([l.lat, l.lng], 12); marker.openPopup(); };
       card.addEventListener("click", e => { if (!e.target.closest("a")) ouvrir(); });
@@ -571,7 +568,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localiser();
   }
 
-  // --- E. Routage SEO par ville (/villes/paris.html) ---
+  // --- E. Routage SEO par ville (/lieux/paris.html) ---
   const currentPath = window.location.pathname.toLowerCase();
   const cityCoords = {
     'paris': [48.8566, 2.3522], 'lyon': [45.7640, 4.8357], 'marseille': [43.2965, 5.3698],
@@ -580,7 +577,7 @@ document.addEventListener("DOMContentLoaded", () => {
     'montpellier': [43.6108, 3.8767]
   };
 
-  if (currentPath.includes('/villes/')) {
+  if (currentPath.includes('/lieux/')) {
     const urlParts = currentPath.split('/');
     const cityFromUrl = urlParts[urlParts.length - 1].replace('.html', '');
     if (cityCoords[cityFromUrl] && typeof map !== 'undefined') {
@@ -592,15 +589,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnRetour = document.querySelector(".btn-retour");
   if (btnRetour) {
     btnRetour.addEventListener("click", (e) => {
-      // Si l'utilisateur provient d'une page de ton site
       if (document.referrer && document.referrer.includes(window.location.hostname)) {
         e.preventDefault();
         window.history.back();
       } 
-      // Si l'utilisateur arrive directement depuis un lien externe ou Google
       else if (btnRetour.getAttribute("href") === "#" || !btnRetour.getAttribute("href")) {
         e.preventDefault();
         window.location.href = "index.html";
+      }
+    });
+  }
+
+  // --- G. Affichage / Masquage du bloc Recherche & Filtres ---
+  const btnToggleFiltres = document.getElementById("btn-toggle-filtres") || document.querySelector("[data-toggle-filtres]");
+  const panneauFiltres = document.getElementById("panneau-filtres") || document.getElementById("bloc-filtres");
+  const txtToggleFiltres = document.getElementById("txt-toggle-filtres");
+
+  if (btnToggleFiltres && panneauFiltres) {
+    btnToggleFiltres.addEventListener("click", () => {
+      const estMasque = panneauFiltres.classList.toggle("masque");
+      if (txtToggleFiltres) {
+        txtToggleFiltres.textContent = estMasque ? "Afficher les options" : "Cacher les options";
+      } else {
+        const cibleTexte = btnToggleFiltres.querySelector("span") || btnToggleFiltres;
+        cibleTexte.textContent = estMasque ? "Afficher les options" : "Cacher les options";
       }
     });
   }

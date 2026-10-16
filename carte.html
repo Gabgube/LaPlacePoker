@@ -59,76 +59,83 @@
 
   <!-- Contenu principal -->
   <main>
+
     <!-- Panneau latéral avec les filtres et la liste -->
-    <aside>
-      <!-- Recherche d'une ville -->
-      <div class="recherche-ville">
-        <h1 class="titre-panneau">Où jouer au poker&nbsp;?</h1>
+<aside>
+  <!-- Bouton vert d'affichage / masquage des options (mobile uniquement) -->
+  <button type="button" id="btn-toggle-filtres" class="btn btn-primaire btn-toggle-filtres">
+    <span id="txt-toggle-filtres">Cacher les options</span>
+  </button>
 
-        <form id="form-lieu" class="recherche" role="search">
-          <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          <label for="q-lieu" class="sr-only">Ville ou code postal</label>
-          <input id="q-lieu" type="search" placeholder="Ville ou code postal" list="suggestions-lieu" autocomplete="off" enterkeyhint="search">
-          <datalist id="suggestions-lieu"></datalist>
-          <button type="submit" class="btn btn-primaire">Chercher</button>
-        </form>
+  <!-- Grand conteneur masquable (Recherche + Filtres) -->
+  <div id="panneau-filtres" class="panneau-filtres">
 
-        <div id="bloc-ref" class="bloc-ref" hidden>
-          <svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
-          <span id="ref-texte"></span>
-          <select id="f-rayon" aria-label="Rayon de recherche">
-            <option value="10">10 km</option>
-            <option value="25">25 km</option>
-            <option value="50" selected>50 km</option>
-            <option value="100">100 km</option>
-            <option value="0">Toute la France</option>
-          </select>
-          <button type="button" id="btn-ref-effacer" class="btn-icone" aria-label="Effacer la ville"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-        </div>
-        <a id="lien-page-ville" class="lien-page-ville" hidden><span id="lien-page-ville-texte"></span><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <p id="statut-lieu" class="statut" role="status" hidden></p>
+    <!-- Recherche d'une ville -->
+    <div class="recherche-ville">
+      <h1 class="titre-panneau">Où jouer au poker&nbsp;?</h1>
+
+      <form id="form-lieu" class="recherche" role="search">
+        <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <label for="q-lieu" class="sr-only">Ville ou code postal</label>
+        <input id="q-lieu" type="search" placeholder="Ville ou code postal" list="suggestions-lieu" autocomplete="off" enterkeyhint="search">
+        <datalist id="suggestions-lieu"></datalist>
+        <button type="submit" class="btn btn-primaire">Chercher</button>
+      </form>
+
+      <div id="bloc-ref" class="bloc-ref" hidden>
+        <svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+        <span id="ref-texte"></span>
+        <select id="f-rayon" aria-label="Rayon de recherche">
+          <option value="10">10 km</option>
+          <option value="25">25 km</option>
+          <option value="50" selected>50 km</option>
+          <option value="100">100 km</option>
+          <option value="0">Toute la France</option>
+        </select>
+        <button type="button" id="btn-ref-effacer" class="btn-icone" aria-label="Effacer la ville"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
       </div>
 
-      <!-- Filtres -->
-      <details class="filters" open>
-        <summary class="btn-mobile-summary">
-          <span class="texte-afficher">Afficher les filtres</span>
-          <span class="texte-cacher">Cacher les filtres</span>
-        </summary>
+      <a id="lien-page-ville" class="lien-page-ville" hidden><span id="lien-page-ville-texte"></span><svg class="ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <p id="statut-lieu" class="statut" role="status" hidden></p>
+    </div>
 
-        <div class="filters-content">
-          <label>Type de lieu
-            <select id="f-type">
-              <option value="">Tous les types</option>
-              <option value="bar">Red Cactus</option>
-              <option value="casino">Casinos</option>
-              <option value="associatif">Associatif</option>
-            </select>
-          </label>
-          <label>Tarif
-            <select id="f-prix">
-              <option value="">Gratuit et payant</option>
-              <option value="gratuit">Gratuit</option>
-              <option value="payant">Payant</option>
-            </select>
-          </label>
-          <label>Format
-            <select id="f-poker">
-              <option value="">Tous les formats</option>
-              <option value="cash">Cash Game</option>
-              <option value="tournois">Tournois</option>
-              <option value="les_deux">Cash Game & Tournois</option>
-            </select>
-          </label>
-        </div>
-      </details>
+    <!-- Filtres -->
+    <div class="filters">
+      <div class="filters-content">
+        <label>Type de lieu
+          <select id="f-type">
+            <option value="">Tous les types</option>
+            <option value="bar">Red Cactus</option>
+            <option value="casino">Casinos</option>
+            <option value="associatif">Associatif</option>
+          </select>
+        </label>
+        <label>Tarif
+          <select id="f-prix">
+            <option value="">Gratuit et payant</option>
+            <option value="gratuit">Gratuit</option>
+            <option value="payant">Payant</option>
+          </select>
+        </label>
+        <label>Format
+          <select id="f-poker">
+            <option value="">Tous les formats</option>
+            <option value="cash">Cash Game</option>
+            <option value="tournois">Tournois</option>
+            <option value="les_deux">Cash Game & Tournois</option>
+          </select>
+        </label>
+      </div>
+    </div>
 
-      <!-- Compteur de résultats -->
-      <div id="count" aria-live="polite"></div>
+  </div>
 
-      <!-- Liste des cartes des bars -->
-      <div id="list"></div>
-    </aside>
+  <!-- Compteur de résultats -->
+  <div id="count" aria-live="polite"></div>
+
+  <!-- Liste des cartes des bars -->
+  <div id="list"></div>
+</aside>
 
     <!-- Conteneur de la carte -->
     <div id="map" role="region" aria-label="Carte des lieux"></div>

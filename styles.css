@@ -1,11 +1,11 @@
 /* =========================================
    styles.css : toutes les pages de LaPlacePoker
    (les pages de texte ont styles2.css)
-   1. Variables & Palette Neutre      6. Badges & Boutons
-   2. En-tête & Pied de page          7. Modale
-   3. Disposition principale          8. Marqueurs et Clusters Leaflet
-   4. Filtres                         9. Mobile
-   5. Liste & Cartes                 10. Accueil, pages villes et pages des casinos
+   1. Variables & Palette Neutre       6. Badges & Boutons
+   2. En-tête & Pied de page           7. Modale
+   3. Disposition principale           8. Marqueurs et Clusters Leaflet
+   4. Filtres                          9. Mobile
+   5. Liste & Cartes                  10. Accueil, pages villes et pages des casinos
    ========================================= */
 
 /* --- 1. Variables & Palette Neutre --- */
@@ -21,7 +21,7 @@
   --muted: #6b7671;        /* Texte secondaire */
   --bg: #f7f7f3;            /* Fond de page léger */
   --surface: #ffffff;      /* Surface des cartes et panneaux */
-  --line: #e7e8e3;         /* Séparateurs */
+  --line: #e7e8e3;          /* Séparateurs */
   --ligne-forte: #d5d8d2;
   --radius: 16px;
 
@@ -140,18 +140,16 @@ a { color: var(--btn-primary); }
 
 .btn-proposer { margin-left: auto; }
 
-/* --- MENU BURGER & DROPDOWN V1 --- */
-
+/* --- MENU BURGER & DROPDOWN --- */
 .dropdown {
   position: relative;
   display: inline-flex;
   align-items: center;
 }
 
-/* Le bouton des 3 tirets (supprime le carré gris natif) */
 .btn-burger {
   background: var(--btn-primary);
-  border: 0px solid #cbd5e1;
+  border: 0;
   border-radius: 8px;
   padding: 8px 10px;
   cursor: pointer;
@@ -167,7 +165,6 @@ a { color: var(--btn-primary); }
   background-color: var(--btn-hover);
 }
 
-/* La carte du menu déroulant (alignée verticalement) */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -180,15 +177,14 @@ a { color: var(--btn-primary); }
   border: 1px solid #e2e8f0;
   z-index: 1000;
   overflow: hidden;
-  flex-direction: column; /* Force l'affichage vertical */
+  flex-direction: column;
 }
 
-/* Style des liens à l'intérieur */
 .dropdown-content a {
   display: block;
   padding: 12px 16px;
   color: #1e293b;
-  text-decoration: none; /* Retire le soulignement vert */
+  text-decoration: none;
   font-size: 0.875rem;
   font-weight: 500;
   white-space: nowrap;
@@ -205,17 +201,15 @@ a { color: var(--btn-primary); }
   color: #0e7a4f;
 }
 
-/* Affichage déclenché par JS au clic */
 .dropdown-content.show {
   display: flex !important;
 }
 
-/* Masqué sur ordinateur le bouton proposer un tournoi*/
 .lien-proposer-mobile {
   display: none !important;
 }
 
-/* Pied de page : message de prévention obligatoire */
+/* Pied de page */
 footer {
   padding: 14px 20px;
   font-size: 0.78rem;
@@ -270,7 +264,18 @@ footer {
 }
 
 /* --- 4. Filtres --- */
-/* Recherche d'une ville, au-dessus des filtres */
+.btn-toggle-filtres {
+  display: none !important; /* Masqué sur écran PC */
+}
+
+/* Forçage d'affichage continu du panneau sur ordinateur (> 860px) */
+@media (min-width: 861px) {
+  #panneau-filtres,
+  .panneau-filtres {
+    display: block !important;
+  }
+}
+
 .recherche-ville {
   padding: 22px 20px 0;
   background: var(--surface);
@@ -316,7 +321,6 @@ footer {
 
 .recherche input::-webkit-search-cancel-button { cursor: pointer; }
 
-/* Annulation de la flèche datalist pour Chrome, Edge, Opera, Safari */
 input[list]::-webkit-calendar-picker-indicator,
 input[list]::-webkit-list-button,
 #q-lieu::-webkit-calendar-picker-indicator,
@@ -331,7 +335,6 @@ input[list]::-webkit-list-button,
   -webkit-appearance: none !important;
 }
 
-/* Ville cherchée : rayon du cercle */
 .bloc-ref {
   display: flex;
   align-items: center;
@@ -409,12 +412,10 @@ input[list]::-webkit-list-button,
   margin-top: 10px;
 }
 
-/* Masque le bouton d'accordéon sur PC */
 summary.btn-mobile-summary {
   display: none !important;
 }
 
-/* Bascule du texte dynamique (partout) */
 .texte-cacher {
   display: none;
 }
@@ -485,7 +486,6 @@ details[open] .texte-cacher {
   border-color: var(--ligne-forte);
 }
 
-/* Fiches de la liste : bord gauche de la couleur du lieu */
 #list > .card {
   border-left: 5px solid var(--c);
 }
@@ -500,23 +500,15 @@ details[open] .texte-cacher {
   margin: 2px 0 0;
 }
 
-/* Couleurs des types de lieux */
-[style*="#dc2626"] { --c: #e11d48 !important; } /* Bar Red Cactus */
-[style*="#18181b"] { --c: #1f2937 !important; } /* Casino */
-[style*="#1d4ed8"] { --c: #2563eb !important; } /* Tournoi associatif */
+[style*="#dc2626"] { --c: #e11d48 !important; }
+[style*="#18181b"] { --c: #1f2937 !important; }
+[style*="#1d4ed8"] { --c: #2563eb !important; }
 
-/* Ordre de la liste : tournois associatifs, puis casinos, puis bars
-   (autour d'une ville : du plus proche au plus loin) */
 #list > .card[style*="#1d4ed8"] { order: -2; }
 #list > .card[style*="#18181b"] { order: -1; }
 #list.autour > .card { order: 0; }
 
-/* --- 6. Badges & Boutons ---
-   app.js écrit : <h2>Nom</h2> <span class="tag">Type</span> <span class="tag tag-poker">Format</span>
-   <p class="meta">Adresse</p> <p class="meta">Date · Prix</p> <a class="btn">...</a> <a class="btn btn-maps">Y aller</a>
-   (dans les popups, le nom est dans <strong>). Ici on les met en forme et dans l'ordre d'affichage. */
-
-/* Une fiche = une suite de lignes, les boutons côte à côte en bas */
+/* --- 6. Badges & Boutons --- */
 #list > .card,
 #map .leaflet-popup-content {
   display: flex;
@@ -530,11 +522,8 @@ details[open] .texte-cacher {
 
 #map .leaflet-popup-content > br { display: none; }
 
-/* Pendant que Leaflet mesure la popup (il la passe en "nowrap"), on l'affiche ligne par ligne :
-   elle prend ainsi la largeur de sa plus longue ligne */
 #map .leaflet-popup-content[style*="nowrap"] { display: block; }
 
-/* Type du lieu, au-dessus du nom */
 #list .tag:not(.tag-poker),
 #map .leaflet-popup-content .tag:not(.tag-poker) {
   order: 1;
@@ -548,7 +537,6 @@ details[open] .texte-cacher {
   color: var(--c);
 }
 
-/* Dans les popups, un point de la couleur du lieu devant le type */
 #map .leaflet-popup-content .tag:not(.tag-poker)::before {
   content: "";
   width: 8px;
@@ -557,7 +545,6 @@ details[open] .texte-cacher {
   background: var(--c);
 }
 
-/* Nom du lieu */
 #list > .card > h2,
 #map .leaflet-popup-content > strong {
   order: 2;
@@ -571,7 +558,6 @@ details[open] .texte-cacher {
 
 #map .leaflet-popup-content > strong { padding-right: 16px; }
 
-/* Nom d'un casino qui a sa page (dossier lieu/) */
 #list > .card > h2 a,
 #map .leaflet-popup-content > strong a {
   color: inherit;
@@ -585,7 +571,6 @@ details[open] .texte-cacher {
   text-underline-offset: 3px;
 }
 
-/* Lignes d'infos avec leur icône : adresse, date · prix, format */
 #list .meta, #list .tag-poker,
 #map .leaflet-popup-content .meta, #map .leaflet-popup-content .tag-poker {
   order: 3;
@@ -604,7 +589,7 @@ details[open] .texte-cacher {
 #map .leaflet-popup-content .tag-poker {
   order: 4;
   margin: 4px 0 6px;
-  text-transform: lowercase; /* "Cash Game" -> "Cash game" */
+  text-transform: lowercase;
 }
 
 #list .tag-poker::first-letter,
@@ -666,7 +651,6 @@ details[open] .texte-cacher {
   border-color: var(--muted);
 }
 
-/* Boutons des fiches : le premier en vert, téléphone et itinéraire en blanc */
 #list .btn,
 #map .leaflet-popup-content .btn {
   order: 5;
@@ -713,16 +697,6 @@ details[open] .texte-cacher {
 #list .btn-web, #map .leaflet-popup-content .btn-web { --ico: var(--ico-externe); }
 #list .btn-tel, #map .leaflet-popup-content .btn-tel { --ico: var(--ico-telephone); }
 #list .btn-maps, #map .leaflet-popup-content .btn-maps { --ico: var(--ico-itineraire); }
-
-/* "Y aller" s'affiche "Itinéraire" */
-#list .btn-maps,
-#map .leaflet-popup-content .btn-maps { gap: 0; font-size: 0; }
-
-#list .btn-maps::before,
-#map .leaflet-popup-content .btn-maps::before { margin-right: 7px; }
-
-#list .btn-maps::after,
-#map .leaflet-popup-content .btn-maps::after { content: "Itinéraire"; font-size: 0.8rem; }
 
 /* --- 7. Modale --- */
 #dlg-tournoi {
@@ -787,7 +761,6 @@ details[open] .texte-cacher {
 /* --- 8. Marqueurs et Clusters Leaflet --- */
 .leaflet-container { font-family: var(--texte); }
 
-/* Tailles des marqueurs (.chip) et des groupes (.custom-cluster) : réglées dans carte.html */
 .chip {
   width: 24px;
   height: 24px;
@@ -822,7 +795,6 @@ details[open] .texte-cacher {
   font-size: 0.85rem;
 }
 
-/* Marqueurs des petites cartes des pages villes et des casinos */
 .pion {
   width: 24px;
   height: 24px;
@@ -842,7 +814,6 @@ details[open] .texte-cacher {
   box-shadow: 0 0 0 6px color-mix(in srgb, var(--c) 25%, transparent), 0 4px 10px rgba(17, 26, 22, 0.35);
 }
 
-/* Point de la ville cherchée, au centre du cercle */
 .point-ref {
   width: 20px;
   height: 20px;
@@ -892,7 +863,6 @@ details[open] .texte-cacher {
 
 /* --- 9. Mobile --- */
 @media (max-width: 860px) {
-  /* 1. Optimisation du Header */
   .entete {
     height: 56px;
     gap: 6px;
@@ -905,7 +875,6 @@ details[open] .texte-cacher {
   .nav { margin-left: 4px; }
   .nav a { padding: 7px 11px; font-size: 0.88rem; }
 
-  /* "Proposer" devient un bouton rond "+" */
   .btn-proposer {
     width: 40px;
     height: 40px;
@@ -913,7 +882,6 @@ details[open] .texte-cacher {
   }
   .btn-proposer span { display: none; }
 
-  /* 2. Disposition principale */
   .page-carte main {
     grid-template-columns: 1fr;
     grid-template-rows: 40vh 1fr;
@@ -935,10 +903,32 @@ details[open] .texte-cacher {
     overflow: hidden;
   }
 
-  .recherche-ville { padding: 12px 12px 0; }
+  /* Affichage du bouton Cacher/Afficher les filtres au-dessus de la recherche */
+  .btn-toggle-filtres {
+    display: flex !important;
+    width: calc(100% - 24px);
+    margin: 12px 12px 8px;
+    padding: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    justify-content: center;
+    border-radius: 999px;
+  }
+
+  .panneau-filtres {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Masquage restreint uniquement au mobile */
+  #panneau-filtres.masque,
+  .panneau-filtres.masque {
+    display: none !important;
+  }
+
+  .recherche-ville { padding: 10px 12px 0; }
   .titre-panneau { display: none; }
 
-  /* 3. Compactage des filtres */
   .filters {
     padding: 10px 12px 12px;
   }
@@ -958,7 +948,6 @@ details[open] .texte-cacher {
     padding: 7px 10px;
   }
 
-  /* Bouton d'accordéon affiché sur mobile uniquement */
   summary.btn-mobile-summary {
     display: block !important;
     width: 100%;
@@ -980,10 +969,48 @@ details[open] .texte-cacher {
   #count { padding: 12px 12px 0; }
   #list { padding: 10px 12px 16px; }
 
-  /* 4. Pied de page */
   footer { padding: 12px 14px; }
   .page-carte .pied { padding: 6px 12px; font-size: 0.66rem; line-height: 1.35; }
   .page-carte .pied nav { display: none; }
+
+  /* Popups Leaflet sur mobile */
+  .leaflet-popup-content-wrapper {
+    border-radius: 12px;
+  }
+
+  .leaflet-popup-content {
+    margin: 10px 12px 10px !important;
+    max-width: 230px;
+  }
+
+  #map .leaflet-popup-content > strong {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+
+  #map .leaflet-popup-content .tag {
+    font-size: 0.7rem;
+    margin-bottom: 2px;
+  }
+
+  #map .leaflet-popup-content .meta,
+  #map .leaflet-popup-content .tag-poker {
+    font-size: 0.78rem;
+    padding-left: 20px;
+  }
+
+  #map .leaflet-popup-content .meta::before,
+  #map .leaflet-popup-content .tag-poker::before {
+    width: 14px;
+    height: 14px;
+    top: 2px;
+  }
+
+  #map .leaflet-popup-content .btn {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    margin-top: 4px;
+  }
 }
 
 /* =========================================
@@ -1071,7 +1098,6 @@ details[open] .texte-cacher {
 
 .raccourci:hover { background: #fff; border-color: var(--btn-primary); }
 
-/* --- Bandeau d'en-tête, dates et encarts --- */
 .hero {
   padding: 56px 20px 36px;
   background:
@@ -1175,7 +1201,6 @@ details[open] .texte-cacher {
 .agenda-cta .btn-contour { background: transparent; color: #fff; }
 .agenda-cta .btn-contour:hover { background: rgba(255, 255, 255, 0.1); }
 
-/* --- Fiches des pages villes et de l'accueil --- */
 .fiche-haut {
   display: flex;
   align-items: center;
@@ -1368,7 +1393,7 @@ details[open] .texte-cacher {
 .mini-evenement .date-bloc .jour { font-size: 1.6rem; }
 .mini-evenement .fiche-titre { font-size: 0.98rem; margin-bottom: 4px; }
 
-/* --- Pages villes (poker/<ville>.html) --- */
+/* --- Pages villes --- */
 .hero-ville { padding-top: 28px; }
 .hero-ville .fil { margin-bottom: 18px; }
 
@@ -1449,7 +1474,7 @@ details[open] .texte-cacher {
 .jour-type a { color: var(--encre-2); text-decoration: none; }
 .jour-type a:hover { color: var(--btn-primary); text-decoration: underline; }
 
-/* --- Pages des casinos (lieu/<casino>.html) --- */
+/* --- Pages des casinos --- */
 .fiche-entete { margin-bottom: 20px; }
 
 .fiche-entete .type { font-size: 0.85rem; }
@@ -1551,7 +1576,7 @@ details[open] .texte-cacher {
 
 .proches { margin-top: 40px; }
 
-/* --- Mobile de l'accueil, des pages villes et des pages des casinos --- */
+/* --- Mobile global (accueil, villes et casinos) --- */
 @media (max-width: 860px) {
   .section { padding: 32px 14px 0; }
   .section-titre h2, .section-ville h2 { font-size: 1.3rem; }
@@ -1580,12 +1605,10 @@ details[open] .texte-cacher {
   .semaine-type { grid-template-columns: 1fr 1fr; }
   .bloc-carte-ville, .bloc-carte-ville #mini-carte { height: 280px; min-height: 280px; }
 
-  /* 1. Masquer le bouton "Proposer un tournoi" du header sur mobile */
   .entete > .btn-proposer {
     display: none !important;
   }
 
-  /* 2. Afficher le lien "Proposer un tournoi" à l'intérieur du menu déroulant */
   .dropdown-content .lien-proposer-mobile {
     display: block !important;
   }
@@ -1593,52 +1616,4 @@ details[open] .texte-cacher {
   .dropdown {
     margin-left: auto;
   }
-
-  @media (max-width: 860px) {
-
-  /* --- Réduction du conteneur de la popup Leaflet --- */
-  .leaflet-popup-content-wrapper {
-    border-radius: 12px;
-  }
-
-  .leaflet-popup-content {
-    margin: 10px 12px 10px !important;
-    max-width: 230px;
-  }
-
-  /* --- Réduction du titre --- */
-  #map .leaflet-popup-content > strong {
-    font-size: 0.9rem;
-    margin-bottom: 4px;
-  }
-
-  /* --- Réduction du badge (Type de lieu) --- */
-  #map .leaflet-popup-content .tag {
-    font-size: 0.7rem;
-    margin-bottom: 2px;
-  }
-
-  /* --- Réduction des lignes de texte (Adresse, Dates, Prix) --- */
-  #map .leaflet-popup-content .meta,
-  #map .leaflet-popup-content .tag-poker {
-    font-size: 0.78rem;
-    padding-left: 20px;
-  }
-
-  /* Réduction de la taille des petites icônes dans la popup */
-  #map .leaflet-popup-content .meta::before,
-  #map .leaflet-popup-content .tag-poker::before {
-    width: 14px;
-    height: 14px;
-    top: 2px;
-  }
-
-  /* --- Compactage des boutons en bas de la fiche --- */
-  #map .leaflet-popup-content .btn {
-    padding: 5px 10px;
-    font-size: 0.75rem;
-    margin-top: 4px;
-  }
-
-}
 }
