@@ -10,12 +10,15 @@
 </head>
 <body>
 
-  <div class="container">
+  <main class="conteneur-page-texte">
+    
+    <!-- 1. Bouton Retour au-dessus de la carte blanche -->
+    <a href="javascript:history.back()" class="btn-retour" aria-label="Retour à la page précédente">
+      &larr; Retour
+    </a>
 
-    <div class="content-card">
-      <a href="javascript:history.back()" class="btn-retour" aria-label="Retour à la page précédente">
-      ← Retour
-      </a>
+    <!-- 2. Carré blanc regroupant tout le contenu -->
+    <article class="carte-texte">
       <h1>À propos & Contact</h1>
 
       <h2>Le Projet LaPlacePoker</h2>
@@ -42,11 +45,14 @@
           <a href="mailto:contact@laplacepoker.fr" class="btn" style="margin-top: 0;">contact@laplacepoker.fr</a>
         </div>
       </div>
-    </div>
-  </div>
-  <p style="font-size: 0.75rem; text-align: center; color: #64748b; margin-top: 20px;">
-  Jouer comporte des risques : endettement, isolement, dépendance. Pour être aidé, appelez le 09 74 75 13 13 (appel non surtaxé).
-  </p>
+
+      <!-- Message de prévention en bas de carte -->
+      <p class="prevention">
+        Jouer comporte des risques : endettement, isolement, dépendance. Pour être aidé, appelez le 09 74 75 13 13 (appel non surtaxé).
+      </p>
+    </article>
+
+  </main>
 
 </body>
 </html>
