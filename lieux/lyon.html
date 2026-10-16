@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Poker à Lyon : tournois, casinos et clubs | LaPlacePoker</title>
   <meta name="description" content="Où jouer au poker à Lyon ? 20 lieux à moins de 30 km : 18 bars avec des tournois chaque semaine. Horaires, tarifs et adresses.">
-  <link rel="canonical" href="https://laplacepoker.fr/villes/lyon.html">
+  <link rel="canonical" href="https://laplacepoker.fr/lieux/lyon.html">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="LaPlacePoker">
   <meta property="og:title" content="Poker à Lyon : tournois, casinos et clubs | LaPlacePoker">
   <meta property="og:description" content="Où jouer au poker à Lyon ? 20 lieux à moins de 30 km. Horaires, tarifs et adresses.">
-  <meta property="og:url" content="https://laplacepoker.fr/villes/lyon">
+  <meta property="og:url" content="https://laplacepoker.fr/lieux/lyon.html">
   <meta property="og:image" content="https://laplacepoker.fr/assets/img/Logo_base.png">
   <meta name="theme-color" content="#ffffff">
 
@@ -20,15 +20,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
   
-  <!-- CSS global et CSS spécifique villes -->
   <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="styles3.css">
+  <link rel="stylesheet" href="lieux.css">
   <link rel="icon" type="image/x-icon" href="../assets/img/icon.ico">
 </head>
 <body>
-  <!-- En-tête de la page -->
   <header class="entete">
-    <a class="marque" href="index.html">
+    <a class="marque" href="../">
       <img src="../assets/img/Logo_Inv_Vert.png" alt="" width="36" height="36">
       <span>LaPlace<b>Poker</b></span>
     </a>
@@ -39,25 +37,22 @@
     <button type="button" class="btn btn-primaire btn-proposer" data-proposer aria-label="Proposer un tournoi">
       <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg><span>Proposer un tournoi</span>
     </button>
-    <!-- Menu déroulant -->
-      <div class="dropdown">
-    <!-- C'est ce bouton qui appelle ta fonction toggleMenu(event) -->
-    <button type="button" class="btn-burger" onclick="toggleMenu(event)" aria-label="Menu principal">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <line x1="4" x2="20" y1="6" y2="6"/>
-        <line x1="4" x2="20" y1="12" y2="12"/>
-        <line x1="4" x2="20" y1="18" y2="18"/>
-      </svg>
-    </button>
+    <div class="dropdown">
+      <button type="button" class="btn-burger" onclick="toggleMenu(event)" aria-label="Menu principal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="4" x2="20" y1="6" y2="6"/>
+          <line x1="4" x2="20" y1="12" y2="12"/>
+          <line x1="4" x2="20" y1="18" y2="18"/>
+        </svg>
+      </button>
 
-    <!-- Le menu que ton JS cible via getElementById("dropdown-content") -->
-    <div class="dropdown-content" id="dropdown-content">
-      <a href="contact.html">À propos & Contact</a>
-      <a href="mentions-legales.html">Mentions légales</a>
-      <a href="politique-confidentialite.html">Politique de confidentialité</a>
-      <a href="#" class="lien-proposer-mobile" data-proposer>Proposer un tournoi</a>
+      <div class="dropdown-content" id="dropdown-content">
+        <a href="../contact.html">À propos & Contact</a>
+        <a href="../mentions-legales.html">Mentions légales</a>
+        <a href="../politique-confidentialite.html">Politique de confidentialité</a>
+        <a href="#" class="lien-proposer-mobile" data-proposer>Proposer un tournoi</a>
+      </div>
     </div>
-  </div>
   </header>
 
   <main>
@@ -67,14 +62,15 @@
         <h1>Poker à Lyon</h1>
         <p><strong>20 lieux</strong> où jouer au poker à moins de 30 km de Lyon (Rhône) : 18 bars avec des tournois chaque semaine.</p>
         <div class="raccourcis">
-          <a class="raccourci" href="../carte?ville=Lyon"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.1 5.6a2 2 0 0 0 1.8 0l3.7-1.9a1 1 0 0 1 1.4.9v12.8a1 1 0 0 1-.6.9l-4.5 2.3a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.7 1.8a1 1 0 0 1-1.4-.9V6.6a1 1 0 0 1 .6-.9l4.5-2.3a2 2 0 0 1 1.8 0Z"/><path d="M15 5.8v15M9 3.2v15"/></svg>Voir sur la carte</a>
+          <a class="raccourci" href="../carte.html?ville=Lyon"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.1 5.6a2 2 0 0 0 1.8 0l3.7-1.9a1 1 0 0 1 1.4.9v12.8a1 1 0 0 1-.6.9l-4.5 2.3a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.7 1.8a1 1 0 0 1-1.4-.9V6.6a1 1 0 0 1 .6-.9l4.5-2.3a2 2 0 0 1 1.8 0Z"/><path d="M15 5.8v15M9 3.2v15"/></svg>Voir sur la carte</a>
         </div>
       </div>
     </section>
 
     <div class="conteneur">
-      <div class="bloc bloc-carte bloc-carte-ville"><div id="mini-carte" role="region" aria-label="Carte de Lyon"></div></div>
-      
+    <div class="bloc bloc-carte bloc-carte-ville">
+      <div id="mini-carte" data-type="ville" data-lat="45.764" data-lng="4.8357" data-lieux='[[45.757743, 4.841855, &quot;#e11d48&quot;, &quot;Les Gamins&quot;], [45.748284, 4.843297, &quot;#e11d48&quot;, &quot;AFK Bar&quot;], [45.784865, 4.852921, &quot;#18181b&quot;, &quot;Casino Partouche de Lyon&quot;], [45.779044, 4.879379, &quot;#e11d48&quot;, &quot;L&#x27;Arcaneum&quot;], [45.729633, 4.831153, &quot;#e11d48&quot;, &quot;Zito&quot;], [45.716716, 4.856756, &quot;#e11d48&quot;, &quot;Buffalo Grill (Vénissieux)&quot;], [45.711617, 4.802195, &quot;#e11d48&quot;, &quot;Soul Café&quot;], [45.765057, 4.920851, &quot;#e11d48&quot;, &quot;Del Arte Carré de soie (Vaulx-en-Velin)&quot;], [45.788397, 4.732054, &quot;#18181b&quot;, &quot;Casino Partouche de La Tour-De-Salvagny&quot;], [45.724881, 4.938756, &quot;#e11d48&quot;, &quot;Campanile SMART (Saint Priest)&quot;], [45.823134, 4.998726, &quot;#e11d48&quot;, &quot;Buffalo Grill (Lyon-Beynost)&quot;], [45.816318, 4.574659, &quot;#e11d48&quot;, &quot;Le Clos de l&#x27;Abbaye&quot;], [45.955483, 4.692653, &quot;#e11d48&quot;, &quot;Le Petit Bourg&quot;], [45.538089, 4.872096, &quot;#e11d48&quot;, &quot;Café des Arts (Vienne)&quot;], [45.996917, 4.752983, &quot;#e11d48&quot;, &quot;Les Fléchettes caladoises&quot;], [45.522497, 4.872378, &quot;#e11d48&quot;, &quot;La Pression Sociale&quot;], [45.994787, 4.719113, &quot;#e11d48&quot;, &quot;Rock N Beer&quot;], [45.516587, 4.868443, &quot;#e11d48&quot;, &quot;Au Fût et à mesure (Vienne)&quot;], [45.756208, 5.19634, &quot;#e11d48&quot;, &quot;FTW Project&quot;], [45.518736, 4.923597, &quot;#e11d48&quot;, &quot;Game Center - La Turbine&quot;]]' role="region" aria-label="Carte de Lyon"></div>
+    </div>  
       <section class="section-ville">
         <h2>Quel jour jouer au poker à Lyon ?</h2>
         <div class="semaine-type">
@@ -116,23 +112,6 @@
           
             <article class="card">
               <div class="fiche-haut">
-                <span class="type" style="--c:#18181b">Casino</span>
-                <span class="distance">0,7 km</span>
-              </div>
-              <h3 class="fiche-titre">Casino Partouche de Lyon</h3>
-              <ul class="infos">
-                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Chaque semaine</span></li>
-                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Payant · cash</span></li>
-              </ul>
-              <div class="actions">
-                <a class="btn btn-petit btn-primaire" href="https://casino-lyonpharaon.partouche.com/" target="_blank" rel="noopener noreferrer">Voir la page</a>
-                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=45.758,4.8351" target="_blank" rel="noopener noreferrer">
-                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
-                </a>
-              </div>
-            </article>
-            <article class="card">
-              <div class="fiche-haut">
                 <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
                 <span class="distance">0,8 km</span>
               </div>
@@ -161,6 +140,23 @@
               <div class="actions">
                 <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/221" target="_blank" rel="noopener noreferrer">Voir la page</a>
                 <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=45.748284,4.843297" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
+                <span class="type" style="--c:#18181b">Casino</span>
+                <span class="distance">2,7 km</span>
+              </div>
+              <h3 class="fiche-titre">Casino Partouche de Lyon</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Chaque semaine</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Payant · cash</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="casino-partouche-de-lyon.html" >Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=45.784865,4.852921" target="_blank" rel="noopener noreferrer">
                   <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
                 </a>
               </div>
@@ -252,6 +248,23 @@
             </article>
             <article class="card">
               <div class="fiche-haut">
+                <span class="type" style="--c:#18181b">Casino</span>
+                <span class="distance">8,5 km</span>
+              </div>
+              <h3 class="fiche-titre">Casino Partouche de La Tour-De-Salvagny</h3>
+              <ul class="infos">
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Chaque semaine</span></li>
+                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Payant · les_deux</span></li>
+              </ul>
+              <div class="actions">
+                <a class="btn btn-petit btn-primaire" href="casino-partouche-de-la-tour-de-salvagny.html" >Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=45.788397,4.732054" target="_blank" rel="noopener noreferrer">
+                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
+                </a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="fiche-haut">
                 <span class="type" style="--c:#e11d48">Bar Red Cactus</span>
                 <span class="distance">9,1 km</span>
               </div>
@@ -263,23 +276,6 @@
               <div class="actions">
                 <a class="btn btn-petit btn-primaire" href="https://poker.redcactus.fr/bar/1434" target="_blank" rel="noopener noreferrer">Voir la page</a>
                 <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=45.724881,4.938756" target="_blank" rel="noopener noreferrer">
-                  <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
-                </a>
-              </div>
-            </article>
-            <article class="card">
-              <div class="fiche-haut">
-                <span class="type" style="--c:#18181b">Casino</span>
-                <span class="distance">10,7 km</span>
-              </div>
-              <h3 class="fiche-titre">Casino Partouche de La Tour-De-Salvagny</h3>
-              <ul class="infos">
-                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span>Chaque semaine</span></li>
-                <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Payant · les_deux</span></li>
-              </ul>
-              <div class="actions">
-                <a class="btn btn-petit btn-primaire" href="https://casino-latourdesalvagny.partouche.com/" target="_blank" rel="noopener noreferrer">Voir la page</a>
-                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=45.8086,4.7129" target="_blank" rel="noopener noreferrer">
                   <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
                 </a>
               </div>
@@ -462,9 +458,9 @@
   <footer class="pied">
     <p>Jouer comporte des risques : endettement, isolement, dépendance. Pour être aidé, appelez le <a href="tel:0974751313">09 74 75 13 13</a> (appel non surtaxé).</p>
     <nav aria-label="Liens du site">
-      <a href="../contact">À propos & contact</a>
-      <a href="../mentions-legales">Mentions légales</a>
-      <a href="../politique-confidentialite">Confidentialité</a>
+      <a href="../contact.html">À propos & contact</a>
+      <a href="../mentions-legales.html">Mentions légales</a>
+      <a href="../politique-confidentialite.html">Confidentialité</a>
     </nav>
   </footer>
 
@@ -480,11 +476,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <script src="../app.js" defer></script>
-  <script src="villes.js" defer></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      initMiniCarteVille([[45.758, 4.8351, "#18181b", "Casino Partouche de Lyon"], [45.757743, 4.841855, "#e11d48", "Les Gamins"], [45.748284, 4.843297, "#e11d48", "AFK Bar"], [45.779044, 4.879379, "#e11d48", "L'Arcaneum"], [45.729633, 4.831153, "#e11d48", "Zito"], [45.716716, 4.856756, "#e11d48", "Buffalo Grill (Vénissieux)"], [45.711617, 4.802195, "#e11d48", "Soul Café"], [45.765057, 4.920851, "#e11d48", "Del Arte Carré de soie (Vaulx-en-Velin)"], [45.724881, 4.938756, "#e11d48", "Campanile SMART (Saint Priest)"], [45.8086, 4.7129, "#18181b", "Casino Partouche de La Tour-De-Salvagny"], [45.823134, 4.998726, "#e11d48", "Buffalo Grill (Lyon-Beynost)"], [45.816318, 4.574659, "#e11d48", "Le Clos de l'Abbaye"], [45.955483, 4.692653, "#e11d48", "Le Petit Bourg"], [45.538089, 4.872096, "#e11d48", "Café des Arts (Vienne)"], [45.996917, 4.752983, "#e11d48", "Les Fléchettes caladoises"], [45.522497, 4.872378, "#e11d48", "La Pression Sociale"], [45.994787, 4.719113, "#e11d48", "Rock N Beer"], [45.516587, 4.868443, "#e11d48", "Au Fût et à mesure (Vienne)"], [45.756208, 5.19634, "#e11d48", "FTW Project"], [45.518736, 4.923597, "#e11d48", "Game Center - La Turbine"]], 45.764, 4.8357);
-    });
-  </script>
+  <script src="lieux.js" defer></script>
 </body>
 </html>

@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Poker à Montpellier : tournois, casinos et clubs | LaPlacePoker</title>
   <meta name="description" content="Où jouer au poker à Montpellier ? 8 lieux à moins de 30 km : 6 bars avec des tournois chaque semaine. Horaires, tarifs et adresses.">
-  <link rel="canonical" href="https://laplacepoker.fr/villes/montpellier.html">
+  <link rel="canonical" href="https://laplacepoker.fr/lieux/montpellier.html">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="LaPlacePoker">
   <meta property="og:title" content="Poker à Montpellier : tournois, casinos et clubs | LaPlacePoker">
   <meta property="og:description" content="Où jouer au poker à Montpellier ? 8 lieux à moins de 30 km. Horaires, tarifs et adresses.">
-  <meta property="og:url" content="https://laplacepoker.fr/villes/montpellier">
+  <meta property="og:url" content="https://laplacepoker.fr/lieux/montpellier.html">
   <meta property="og:image" content="https://laplacepoker.fr/assets/img/Logo_base.png">
   <meta name="theme-color" content="#ffffff">
 
@@ -20,15 +20,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
   
-  <!-- CSS global et CSS spécifique villes -->
   <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="styles3.css">
+  <link rel="stylesheet" href="lieux.css">
   <link rel="icon" type="image/x-icon" href="../assets/img/icon.ico">
 </head>
 <body>
-  <!-- En-tête de la page -->
   <header class="entete">
-    <a class="marque" href="index.html">
+    <a class="marque" href="../">
       <img src="../assets/img/Logo_Inv_Vert.png" alt="" width="36" height="36">
       <span>LaPlace<b>Poker</b></span>
     </a>
@@ -39,25 +37,22 @@
     <button type="button" class="btn btn-primaire btn-proposer" data-proposer aria-label="Proposer un tournoi">
       <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg><span>Proposer un tournoi</span>
     </button>
-    <!-- Menu déroulant -->
-      <div class="dropdown">
-    <!-- C'est ce bouton qui appelle ta fonction toggleMenu(event) -->
-    <button type="button" class="btn-burger" onclick="toggleMenu(event)" aria-label="Menu principal">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <line x1="4" x2="20" y1="6" y2="6"/>
-        <line x1="4" x2="20" y1="12" y2="12"/>
-        <line x1="4" x2="20" y1="18" y2="18"/>
-      </svg>
-    </button>
+    <div class="dropdown">
+      <button type="button" class="btn-burger" onclick="toggleMenu(event)" aria-label="Menu principal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="4" x2="20" y1="6" y2="6"/>
+          <line x1="4" x2="20" y1="12" y2="12"/>
+          <line x1="4" x2="20" y1="18" y2="18"/>
+        </svg>
+      </button>
 
-    <!-- Le menu que ton JS cible via getElementById("dropdown-content") -->
-    <div class="dropdown-content" id="dropdown-content">
-      <a href="contact.html">À propos & Contact</a>
-      <a href="mentions-legales.html">Mentions légales</a>
-      <a href="politique-confidentialite.html">Politique de confidentialité</a>
-      <a href="#" class="lien-proposer-mobile" data-proposer>Proposer un tournoi</a>
+      <div class="dropdown-content" id="dropdown-content">
+        <a href="../contact.html">À propos & Contact</a>
+        <a href="../mentions-legales.html">Mentions légales</a>
+        <a href="../politique-confidentialite.html">Politique de confidentialité</a>
+        <a href="#" class="lien-proposer-mobile" data-proposer>Proposer un tournoi</a>
+      </div>
     </div>
-  </div>
   </header>
 
   <main>
@@ -67,14 +62,15 @@
         <h1>Poker à Montpellier</h1>
         <p><strong>8 lieux</strong> où jouer au poker à moins de 30 km de Montpellier (Hérault) : 6 bars avec des tournois chaque semaine.</p>
         <div class="raccourcis">
-          <a class="raccourci" href="../carte?ville=Montpellier"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.1 5.6a2 2 0 0 0 1.8 0l3.7-1.9a1 1 0 0 1 1.4.9v12.8a1 1 0 0 1-.6.9l-4.5 2.3a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.7 1.8a1 1 0 0 1-1.4-.9V6.6a1 1 0 0 1 .6-.9l4.5-2.3a2 2 0 0 1 1.8 0Z"/><path d="M15 5.8v15M9 3.2v15"/></svg>Voir sur la carte</a>
+          <a class="raccourci" href="../carte.html?ville=Montpellier"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.1 5.6a2 2 0 0 0 1.8 0l3.7-1.9a1 1 0 0 1 1.4.9v12.8a1 1 0 0 1-.6.9l-4.5 2.3a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.7 1.8a1 1 0 0 1-1.4-.9V6.6a1 1 0 0 1 .6-.9l4.5-2.3a2 2 0 0 1 1.8 0Z"/><path d="M15 5.8v15M9 3.2v15"/></svg>Voir sur la carte</a>
         </div>
       </div>
     </section>
 
     <div class="conteneur">
-      <div class="bloc bloc-carte bloc-carte-ville"><div id="mini-carte" role="region" aria-label="Carte de Montpellier"></div></div>
-      
+    <div class="bloc bloc-carte bloc-carte-ville">
+      <div id="mini-carte" data-type="ville" data-lat="43.6108" data-lng="3.8767" data-lieux='[[43.612842, 3.876899, &quot;#e11d48&quot;, &quot;The Copper Bar&quot;], [43.608117, 3.883755, &quot;#e11d48&quot;, &quot;Ninkasi (Montpellier)&quot;], [43.606336, 3.890254, &quot;#e11d48&quot;, &quot;Brasserie 96&quot;], [43.569, 3.83778, &quot;#e11d48&quot;, &quot;Buffalo Grill (Saint-Jean-de-Vedas)&quot;], [43.677116, 3.984145, &quot;#e11d48&quot;, &quot;Café de la paix (Castries)&quot;], [43.562836, 4.081097, &quot;#18181b&quot;, &quot;Casino Partouche de La Grande-Motte&quot;], [43.437168, 3.675218, &quot;#18181b&quot;, &quot;Casino Circus de Balaruc-Les-Bains&quot;], [43.739112, 4.181165, &quot;#e11d48&quot;, &quot;Bar du Griffe&quot;]]' role="region" aria-label="Carte de Montpellier"></div>
+    </div>  
       <section class="section-ville">
         <h2>Quel jour jouer au poker à Montpellier ?</h2>
         <div class="semaine-type">
@@ -202,7 +198,7 @@
             <article class="card">
               <div class="fiche-haut">
                 <span class="type" style="--c:#18181b">Casino</span>
-                <span class="distance">16,3 km</span>
+                <span class="distance">17,3 km</span>
               </div>
               <h3 class="fiche-titre">Casino Partouche de La Grande-Motte</h3>
               <ul class="infos">
@@ -210,8 +206,8 @@
                 <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Payant · les_deux</span></li>
               </ul>
               <div class="actions">
-                <a class="btn btn-petit btn-primaire" href="https://casino-grandemotte.partouche.com/" target="_blank" rel="noopener noreferrer">Voir la page</a>
-                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=43.571,4.072" target="_blank" rel="noopener noreferrer">
+                <a class="btn btn-petit btn-primaire" href="casino-partouche-de-la-grande-motte.html" >Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=43.562836,4.081097" target="_blank" rel="noopener noreferrer">
                   <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
                 </a>
               </div>
@@ -219,7 +215,7 @@
             <article class="card">
               <div class="fiche-haut">
                 <span class="type" style="--c:#18181b">Casino</span>
-                <span class="distance">23,5 km</span>
+                <span class="distance">25,2 km</span>
               </div>
               <h3 class="fiche-titre">Casino Circus de Balaruc-Les-Bains</h3>
               <ul class="infos">
@@ -227,8 +223,8 @@
                 <li><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg><span>Payant · les_deux</span></li>
               </ul>
               <div class="actions">
-                <a class="btn btn-petit btn-primaire" href="https://www.circuscasino.fr/fr/casinos/balaruc/" target="_blank" rel="noopener noreferrer">Voir la page</a>
-                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=43.4476,3.6922" target="_blank" rel="noopener noreferrer">
+                <a class="btn btn-petit btn-primaire" href="casino-circus-de-balaruc-les-bains.html" >Voir la page</a>
+                <a class="btn btn-petit btn-secondaire" href="https://www.google.com/maps/dir/?api=1&destination=43.437168,3.675218" target="_blank" rel="noopener noreferrer">
                   <svg class="ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 22 2l-9 19-2-8Z"/></svg>Itinéraire
                 </a>
               </div>
@@ -258,9 +254,9 @@
   <footer class="pied">
     <p>Jouer comporte des risques : endettement, isolement, dépendance. Pour être aidé, appelez le <a href="tel:0974751313">09 74 75 13 13</a> (appel non surtaxé).</p>
     <nav aria-label="Liens du site">
-      <a href="../contact">À propos & contact</a>
-      <a href="../mentions-legales">Mentions légales</a>
-      <a href="../politique-confidentialite">Confidentialité</a>
+      <a href="../contact.html">À propos & contact</a>
+      <a href="../mentions-legales.html">Mentions légales</a>
+      <a href="../politique-confidentialite.html">Confidentialité</a>
     </nav>
   </footer>
 
@@ -276,11 +272,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <script src="../app.js" defer></script>
-  <script src="villes.js" defer></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      initMiniCarteVille([[43.612842, 3.876899, "#e11d48", "The Copper Bar"], [43.608117, 3.883755, "#e11d48", "Ninkasi (Montpellier)"], [43.606336, 3.890254, "#e11d48", "Brasserie 96"], [43.569, 3.83778, "#e11d48", "Buffalo Grill (Saint-Jean-de-Vedas)"], [43.677116, 3.984145, "#e11d48", "Café de la paix (Castries)"], [43.571, 4.072, "#18181b", "Casino Partouche de La Grande-Motte"], [43.4476, 3.6922, "#18181b", "Casino Circus de Balaruc-Les-Bains"], [43.739112, 4.181165, "#e11d48", "Bar du Griffe"]], 43.6108, 3.8767);
-    });
-  </script>
+  <script src="lieux.js" defer></script>
 </body>
 </html>

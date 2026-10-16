@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Poker à Paris : tournois, casinos et clubs | LaPlacePoker</title>
   <meta name="description" content="Où jouer au poker à Paris ? 53 lieux à moins de 30 km : 53 bars avec des tournois chaque semaine. Horaires, tarifs et adresses.">
-  <link rel="canonical" href="https://laplacepoker.fr/villes/paris.html">
+  <link rel="canonical" href="https://laplacepoker.fr/lieux/paris.html">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="LaPlacePoker">
   <meta property="og:title" content="Poker à Paris : tournois, casinos et clubs | LaPlacePoker">
   <meta property="og:description" content="Où jouer au poker à Paris ? 53 lieux à moins de 30 km. Horaires, tarifs et adresses.">
-  <meta property="og:url" content="https://laplacepoker.fr/villes/paris">
+  <meta property="og:url" content="https://laplacepoker.fr/lieux/paris.html">
   <meta property="og:image" content="https://laplacepoker.fr/assets/img/Logo_base.png">
   <meta name="theme-color" content="#ffffff">
 
@@ -20,15 +20,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
   
-  <!-- CSS global et CSS spécifique villes -->
   <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="styles3.css">
+  <link rel="stylesheet" href="lieux.css">
   <link rel="icon" type="image/x-icon" href="../assets/img/icon.ico">
 </head>
 <body>
-  <!-- En-tête de la page -->
   <header class="entete">
-    <a class="marque" href="index.html">
+    <a class="marque" href="../">
       <img src="../assets/img/Logo_Inv_Vert.png" alt="" width="36" height="36">
       <span>LaPlace<b>Poker</b></span>
     </a>
@@ -39,25 +37,22 @@
     <button type="button" class="btn btn-primaire btn-proposer" data-proposer aria-label="Proposer un tournoi">
       <svg class="ico" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg><span>Proposer un tournoi</span>
     </button>
-    <!-- Menu déroulant -->
-      <div class="dropdown">
-    <!-- C'est ce bouton qui appelle ta fonction toggleMenu(event) -->
-    <button type="button" class="btn-burger" onclick="toggleMenu(event)" aria-label="Menu principal">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <line x1="4" x2="20" y1="6" y2="6"/>
-        <line x1="4" x2="20" y1="12" y2="12"/>
-        <line x1="4" x2="20" y1="18" y2="18"/>
-      </svg>
-    </button>
+    <div class="dropdown">
+      <button type="button" class="btn-burger" onclick="toggleMenu(event)" aria-label="Menu principal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="4" x2="20" y1="6" y2="6"/>
+          <line x1="4" x2="20" y1="12" y2="12"/>
+          <line x1="4" x2="20" y1="18" y2="18"/>
+        </svg>
+      </button>
 
-    <!-- Le menu que ton JS cible via getElementById("dropdown-content") -->
-    <div class="dropdown-content" id="dropdown-content">
-      <a href="contact.html">À propos & Contact</a>
-      <a href="mentions-legales.html">Mentions légales</a>
-      <a href="politique-confidentialite.html">Politique de confidentialité</a>
-      <a href="#" class="lien-proposer-mobile" data-proposer>Proposer un tournoi</a>
+      <div class="dropdown-content" id="dropdown-content">
+        <a href="../contact.html">À propos & Contact</a>
+        <a href="../mentions-legales.html">Mentions légales</a>
+        <a href="../politique-confidentialite.html">Politique de confidentialité</a>
+        <a href="#" class="lien-proposer-mobile" data-proposer>Proposer un tournoi</a>
+      </div>
     </div>
-  </div>
   </header>
 
   <main>
@@ -67,14 +62,15 @@
         <h1>Poker à Paris</h1>
         <p><strong>53 lieux</strong> où jouer au poker à moins de 30 km de Paris (Paris) : 53 bars avec des tournois chaque semaine.</p>
         <div class="raccourcis">
-          <a class="raccourci" href="../carte?ville=Paris"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.1 5.6a2 2 0 0 0 1.8 0l3.7-1.9a1 1 0 0 1 1.4.9v12.8a1 1 0 0 1-.6.9l-4.5 2.3a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.7 1.8a1 1 0 0 1-1.4-.9V6.6a1 1 0 0 1 .6-.9l4.5-2.3a2 2 0 0 1 1.8 0Z"/><path d="M15 5.8v15M9 3.2v15"/></svg>Voir sur la carte</a>
+          <a class="raccourci" href="../carte.html?ville=Paris"><svg class="ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.1 5.6a2 2 0 0 0 1.8 0l3.7-1.9a1 1 0 0 1 1.4.9v12.8a1 1 0 0 1-.6.9l-4.5 2.3a2 2 0 0 1-1.8 0l-4.2-2.1a2 2 0 0 0-1.8 0l-3.7 1.8a1 1 0 0 1-1.4-.9V6.6a1 1 0 0 1 .6-.9l4.5-2.3a2 2 0 0 1 1.8 0Z"/><path d="M15 5.8v15M9 3.2v15"/></svg>Voir sur la carte</a>
         </div>
       </div>
     </section>
 
     <div class="conteneur">
-      <div class="bloc bloc-carte bloc-carte-ville"><div id="mini-carte" role="region" aria-label="Carte de Paris"></div></div>
-      
+    <div class="bloc bloc-carte bloc-carte-ville">
+      <div id="mini-carte" data-type="ville" data-lat="48.8566" data-lng="2.3522" data-lieux='[[48.860106, 2.34998, &quot;#e11d48&quot;, &quot;Oculto Paris&quot;], [48.851451, 2.344514, &quot;#e11d48&quot;, &quot;Food&amp;Tea&quot;], [48.844149, 2.349452, &quot;#e11d48&quot;, &quot;IPN&quot;], [48.842467, 2.349851, &quot;#e11d48&quot;, &quot;Margen&#x27;s Pub&quot;], [48.838093, 2.360091, &quot;#e11d48&quot;, &quot;L&#x27;Ilot&quot;], [48.864968, 2.38181, &quot;#e11d48&quot;, &quot;Gaston Laveur&quot;], [48.831114, 2.3582, &quot;#e11d48&quot;, &quot;Le Café du Village (Paris)&quot;], [48.827976, 2.351042, &quot;#e11d48&quot;, &quot;Le Sputnik&quot;], [48.869129, 2.392103, &quot;#e11d48&quot;, &quot;Le Café des sports (Paris)&quot;], [48.884313, 2.339843, &quot;#e11d48&quot;, &quot;Pappasito&#x27;s&quot;], [48.840045, 2.394507, &quot;#e11d48&quot;, &quot;J&#x27;peux pas j&#x27;ai poney&quot;], [48.889027, 2.346584, &quot;#e11d48&quot;, &quot;Le Zéro six&quot;], [48.883053, 2.318513, &quot;#e11d48&quot;, &quot;La Maison (Paris 17)&quot;], [48.887836, 2.325303, &quot;#e11d48&quot;, &quot;L&#x27;Entrepotes&quot;], [48.845112, 2.406072, &quot;#e11d48&quot;, &quot;Le Bel Air&quot;], [48.847051, 2.406392, &quot;#e11d48&quot;, &quot;Brasserie Le Netter&quot;], [48.886902, 2.386647, &quot;#e11d48&quot;, &quot;L&#x27;Etoile (Paris)&quot;], [48.892108, 2.316672, &quot;#e11d48&quot;, &quot;La CangTing&quot;], [48.897239, 2.385533, &quot;#e11d48&quot;, &quot;Boom Boom (Villette)&quot;], [48.859058, 2.425345, &quot;#e11d48&quot;, &quot;Eva (Paris-Est)&quot;], [48.815242, 2.419209, &quot;#e11d48&quot;, &quot;L’Entrepôtes (94)&quot;], [48.80462, 2.427295, &quot;#e11d48&quot;, &quot;Le Méditérranéen&quot;], [48.825754, 2.248836, &quot;#e11d48&quot;, &quot;Gloria II&quot;], [48.825513, 2.247489, &quot;#e11d48&quot;, &quot;Le Tarbouche&quot;], [48.777015, 2.313942, &quot;#e11d48&quot;, &quot;Volfoni (Bourg-la-Reine)&quot;], [48.82966, 2.474687, &quot;#e11d48&quot;, &quot;Bowling de Joinville-Le-Pont&quot;], [48.819684, 2.475411, &quot;#e11d48&quot;, &quot;Les Artistes Cuisineurs&quot;], [48.831897, 2.490088, &quot;#e11d48&quot;, &quot;Bowling de Nogent&quot;], [48.748986, 2.35141, &quot;#e11d48&quot;, &quot;La Bigouden (Rungis)&quot;], [48.786864, 2.478223, &quot;#e11d48&quot;, &quot;Antrechoc&quot;], [48.84935, 2.524328, &quot;#e11d48&quot;, &quot;Brewpub La Française&quot;], [48.780884, 2.218117, &quot;#e11d48&quot;, &quot;Au bureau (Vélizy)&quot;], [48.840061, 2.527398, &quot;#e11d48&quot;, &quot;Chez Toine&quot;], [48.800076, 2.191555, &quot;#e11d48&quot;, &quot;Le Nova Klub&quot;], [48.988918, 2.259085, &quot;#e11d48&quot;, &quot;Le colisée by Massimo&quot;], [48.945147, 2.144532, &quot;#e11d48&quot;, &quot;Santa Monica&quot;], [48.843127, 2.61561, &quot;#e11d48&quot;, &quot;La Villa de Noisiel&quot;], [48.778138, 2.587237, &quot;#e11d48&quot;, &quot;Del Arte (Pontault-Combault)&quot;], [49.005377, 2.177246, &quot;#e11d48&quot;, &quot;Chic Pub&quot;], [48.70702, 2.527347, &quot;#e11d48&quot;, &quot;Anjoy&quot;], [48.747187, 2.117719, &quot;#e11d48&quot;, &quot;Noble jour &amp; Nuit&quot;], [48.719961, 2.565684, &quot;#e11d48&quot;, &quot;The Backyard 94&quot;], [49.017072, 2.177106, &quot;#e11d48&quot;, &quot;EVA (Beauchamp)&quot;], [48.751254, 2.623434, &quot;#e11d48&quot;, &quot;Le Donjon&quot;], [48.646445, 2.329136, &quot;#e11d48&quot;, &quot;La Tartine Ludique&quot;], [48.971379, 2.079721, &quot;#e11d48&quot;, &quot;O&#x27;Café (Achères)&quot;], [48.911264, 2.034632, &quot;#e11d48&quot;, &quot;Del Arte (Chambourcy)&quot;], [48.78292, 2.042535, &quot;#e11d48&quot;, &quot;Smile World (Montigny)&quot;], [48.947583, 2.659305, &quot;#e11d48&quot;, &quot;At The Mos Bar&quot;], [49.007348, 2.086299, &quot;#e11d48&quot;, &quot;Le Noa&quot;], [48.768032, 2.02363, &quot;#e11d48&quot;, &quot;Le Mangabar&quot;], [49.006561, 2.076415, &quot;#e11d48&quot;, &quot;A l&#x27;Endroit (Conflans)&quot;], [49.047461, 2.133108, &quot;#e11d48&quot;, &quot;Chester Pub (Saint-Ouen-l&#x27;Aumône)&quot;]]' role="region" aria-label="Carte de Paris"></div>
+    </div>  
       <section class="section-ville">
         <h2>Quel jour jouer au poker à Paris ?</h2>
         <div class="semaine-type">
@@ -1023,9 +1019,9 @@
   <footer class="pied">
     <p>Jouer comporte des risques : endettement, isolement, dépendance. Pour être aidé, appelez le <a href="tel:0974751313">09 74 75 13 13</a> (appel non surtaxé).</p>
     <nav aria-label="Liens du site">
-      <a href="../contact">À propos & contact</a>
-      <a href="../mentions-legales">Mentions légales</a>
-      <a href="../politique-confidentialite">Confidentialité</a>
+      <a href="../contact.html">À propos & contact</a>
+      <a href="../mentions-legales.html">Mentions légales</a>
+      <a href="../politique-confidentialite.html">Confidentialité</a>
     </nav>
   </footer>
 
@@ -1041,11 +1037,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <script src="../app.js" defer></script>
-  <script src="villes.js" defer></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      initMiniCarteVille([[48.860106, 2.34998, "#e11d48", "Oculto Paris"], [48.851451, 2.344514, "#e11d48", "Food&Tea"], [48.844149, 2.349452, "#e11d48", "IPN"], [48.842467, 2.349851, "#e11d48", "Margen's Pub"], [48.838093, 2.360091, "#e11d48", "L'Ilot"], [48.864968, 2.38181, "#e11d48", "Gaston Laveur"], [48.831114, 2.3582, "#e11d48", "Le Café du Village (Paris)"], [48.827976, 2.351042, "#e11d48", "Le Sputnik"], [48.869129, 2.392103, "#e11d48", "Le Café des sports (Paris)"], [48.884313, 2.339843, "#e11d48", "Pappasito's"], [48.840045, 2.394507, "#e11d48", "J'peux pas j'ai poney"], [48.889027, 2.346584, "#e11d48", "Le Zéro six"], [48.883053, 2.318513, "#e11d48", "La Maison (Paris 17)"], [48.887836, 2.325303, "#e11d48", "L'Entrepotes"], [48.845112, 2.406072, "#e11d48", "Le Bel Air"], [48.847051, 2.406392, "#e11d48", "Brasserie Le Netter"], [48.886902, 2.386647, "#e11d48", "L'Etoile (Paris)"], [48.892108, 2.316672, "#e11d48", "La CangTing"], [48.897239, 2.385533, "#e11d48", "Boom Boom (Villette)"], [48.859058, 2.425345, "#e11d48", "Eva (Paris-Est)"], [48.815242, 2.419209, "#e11d48", "L’Entrepôtes (94)"], [48.80462, 2.427295, "#e11d48", "Le Méditérranéen"], [48.825754, 2.248836, "#e11d48", "Gloria II"], [48.825513, 2.247489, "#e11d48", "Le Tarbouche"], [48.777015, 2.313942, "#e11d48", "Volfoni (Bourg-la-Reine)"], [48.82966, 2.474687, "#e11d48", "Bowling de Joinville-Le-Pont"], [48.819684, 2.475411, "#e11d48", "Les Artistes Cuisineurs"], [48.831897, 2.490088, "#e11d48", "Bowling de Nogent"], [48.748986, 2.35141, "#e11d48", "La Bigouden (Rungis)"], [48.786864, 2.478223, "#e11d48", "Antrechoc"], [48.84935, 2.524328, "#e11d48", "Brewpub La Française"], [48.780884, 2.218117, "#e11d48", "Au bureau (Vélizy)"], [48.840061, 2.527398, "#e11d48", "Chez Toine"], [48.800076, 2.191555, "#e11d48", "Le Nova Klub"], [48.988918, 2.259085, "#e11d48", "Le colisée by Massimo"], [48.945147, 2.144532, "#e11d48", "Santa Monica"], [48.843127, 2.61561, "#e11d48", "La Villa de Noisiel"], [48.778138, 2.587237, "#e11d48", "Del Arte (Pontault-Combault)"], [49.005377, 2.177246, "#e11d48", "Chic Pub"], [48.70702, 2.527347, "#e11d48", "Anjoy"], [48.747187, 2.117719, "#e11d48", "Noble jour & Nuit"], [48.719961, 2.565684, "#e11d48", "The Backyard 94"], [49.017072, 2.177106, "#e11d48", "EVA (Beauchamp)"], [48.751254, 2.623434, "#e11d48", "Le Donjon"], [48.646445, 2.329136, "#e11d48", "La Tartine Ludique"], [48.971379, 2.079721, "#e11d48", "O'Café (Achères)"], [48.911264, 2.034632, "#e11d48", "Del Arte (Chambourcy)"], [48.78292, 2.042535, "#e11d48", "Smile World (Montigny)"], [48.947583, 2.659305, "#e11d48", "At The Mos Bar"], [49.007348, 2.086299, "#e11d48", "Le Noa"], [48.768032, 2.02363, "#e11d48", "Le Mangabar"], [49.006561, 2.076415, "#e11d48", "A l'Endroit (Conflans)"], [49.047461, 2.133108, "#e11d48", "Chester Pub (Saint-Ouen-l'Aumône)"]], 48.8566, 2.3522);
-    });
-  </script>
+  <script src="lieux.js" defer></script>
 </body>
 </html>

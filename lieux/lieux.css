@@ -1,0 +1,456 @@
+/* =========================================================
+   lieux.css : Styles unifiés pour les Villes et Fiches Lieux
+   ========================================================= */
+
+/* --- 1. Disposition globale & Fil d'Ariane --- */
+.conteneur {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px 20px 64px;
+}
+
+.fil {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 16px;
+  font-size: 0.85rem;
+  color: var(--muted, #667065);
+}
+
+.fil a {
+  color: var(--muted, #667065);
+  text-decoration: none;
+}
+
+.fil a:hover {
+  color: var(--btn-primary, #0e7a4f);
+  text-decoration: underline;
+}
+
+.fil [aria-current] {
+  color: var(--ink, #111a16);
+  font-weight: 600;
+}
+
+/* --- 2. Hero spécifique aux pages Villes --- */
+.hero {
+  padding: 56px 20px 36px;
+  background:
+    radial-gradient(1000px 300px at 85% -40%, rgba(14, 122, 79, 0.14), transparent 70%),
+    linear-gradient(180deg, var(--vert-clair, #e8f5ee), var(--bg, #f7f7f3));
+}
+
+.hero-ville {
+  padding-top: 28px;
+}
+
+.hero-ville .fil {
+  margin-bottom: 18px;
+}
+
+.hero-contenu {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  margin: 0 0 10px;
+  font-family: var(--titre, "Bricolage Grotesque", sans-serif);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--encre-2, #3b4642);
+}
+
+.raccourcis {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.raccourci {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border: 1px solid var(--vert-bord, #c6e7d4);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--brand-header, #064e3b);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.raccourci:hover {
+  background: #ffffff;
+  border-color: var(--btn-primary, #0e7a4f);
+}
+
+/* --- 3. En-tête & Grille des Fiches Individuelles (Casino) --- */
+.fiche-entete {
+  margin-bottom: 24px;
+}
+
+.fiche-entete h1 {
+  margin: 8px 0 6px;
+  font-family: var(--titre, "Bricolage Grotesque", sans-serif);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink, #111a16);
+}
+
+.fiche-adresse {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--encre-2, #3b4642);
+}
+
+.fiche-grille {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch; /* Les 2 colonnes s'alignent exactement sur la même hauteur */
+}
+
+.infos-liste {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0 24px;
+  padding: 0;
+}
+
+.infos-liste .info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.infos-liste dt {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--muted, #667065);
+}
+
+.infos-liste dd {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--ink, #111a16);
+}
+
+.infos-liste dd a {
+  color: var(--btn-primary, #0e7a4f);
+  text-decoration: none;
+}
+
+.infos-liste dd a:hover {
+  text-decoration: underline;
+}
+
+/* --- 4. Blocs & Mini-Carte Leaflet --- */
+.bloc {
+  padding: 24px;
+  background: var(--surface, #ffffff);
+  border: 1px solid var(--line, #e7e8e3);
+  border-radius: 20px;
+  box-shadow: var(--ombre-1, 0 1px 3px rgba(0,0,0,0.05));
+}
+
+.bloc.bloc-carte {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.bloc-carte-ville {
+  height: 380px;
+  margin-bottom: 8px;
+}
+
+#mini-carte {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  background: #eef0ec;
+  border-radius: 20px;
+}
+
+.bloc-carte-ville #mini-carte {
+  min-height: 380px;
+}
+
+/* Marqueurs pions sur la carte */
+.pion {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--c, #18181b);
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(17, 26, 22, 0.35);
+  transition: transform 0.15s;
+}
+
+.pion-grand {
+  width: 32px;
+  height: 32px;
+  border-width: 4px;
+}
+
+.leaflet-marker-icon:hover .pion {
+  transform: scale(1.35);
+}
+
+/* --- 5. Planning Semaine Type (Pages Villes) --- */
+.section-ville,
+.section.proches {
+  margin-top: 40px;
+}
+
+.section-ville h2,
+.section.proches h2 {
+  margin: 0 0 16px;
+  font-family: var(--titre, "Bricolage Grotesque", sans-serif);
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.semaine-type {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.jour-type {
+  padding: 14px;
+  background: var(--surface, #ffffff);
+  border: 1px solid var(--line, #e7e8e3);
+  border-radius: 16px;
+}
+
+.jour-type h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin: 0 0 8px;
+  font-size: 0.92rem;
+}
+
+.jour-type .nb {
+  min-width: 26px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--bg, #f7f7f3);
+  color: var(--muted, #667065);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.jour-type ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 4px;
+  font-size: 0.82rem;
+  color: var(--encre-2, #3b4642);
+}
+
+.jour-type li {
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 4px;
+  line-height: 1.35;
+  font-size: 0.82rem;
+  word-break: break-word;
+}
+
+.jour-type li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  color: #0e7a4f;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.jour-type a {
+  color: var(--encre-2, #3b4642);
+  text-decoration: none;
+}
+
+.jour-type a:hover {
+  color: var(--btn-primary, #0e7a4f);
+  text-decoration: underline;
+}
+
+/* --- 6. Grille des Cartes d'Établissements --- */
+.grille-cartes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  padding: 18px;
+  background: var(--surface, #ffffff);
+  border: 1px solid var(--line, #e7e8e3);
+  border-radius: 18px;
+  box-shadow: var(--ombre-1, 0 1px 3px rgba(0,0,0,0.05));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fiche-haut {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.type {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--c, #18181b);
+}
+
+.type::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c, #18181b);
+}
+
+.distance {
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--vert-clair, #e8f5ee);
+  color: var(--brand-header, #064e3b);
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.fiche-titre {
+  margin: 0 0 8px;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink, #111a16);
+}
+
+.fiche-titre a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.fiche-titre a:hover {
+  color: var(--btn-primary, #0e7a4f);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.infos {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.86rem;
+  color: var(--encre-2, #3b4642);
+}
+
+.infos li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.infos .ico {
+  margin-top: 2px;
+  color: var(--muted, #667065);
+}
+
+.infos span {
+  display: block;
+}
+
+.infos span::first-letter {
+  text-transform: uppercase;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/* --- 7. Adaptations Mobile --- */
+@media (max-width: 860px) {
+  .conteneur {
+    padding: 18px 14px 48px;
+  }
+  .hero {
+    padding: 32px 16px 20px;
+  }
+  .section-ville h2,
+  .section.proches h2 {
+    font-size: 1.3rem;
+  }
+  .fiche-grille {
+    grid-template-columns: 1fr;
+  }
+  .bloc {
+    padding: 18px;
+  }
+  .bloc.bloc-carte,
+  #mini-carte {
+    height: 280px;
+    min-height: 280px;
+  }
+  .bloc-carte-ville,
+  .bloc-carte-ville #mini-carte {
+    height: 280px;
+    min-height: 280px;
+  }
+  .semaine-type {
+    grid-template-columns: 1fr 1fr;
+  }
+  .grille-cartes {
+    grid-template-columns: 1fr;
+  }
+}

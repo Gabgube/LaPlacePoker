@@ -18,10 +18,6 @@ const OFFRES_POKER = {
 const URL_GEOCODAGE = "https://data.geopf.fr/geocodage/search"; 
 const VILLES_AVEC_PAGE = ["Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Nantes", "Montpellier", "Strasbourg", "Bordeaux", "Lille"]; 
 
-const CASINOS_AVEC_PAGE = {
-  "Casino Partouche de La Roche-Posay": "/lieu/cas_52-casino-partouche-de-la-roche-posay"
-};
-
 let lieux = [];
 let ref = null; 
 let suggestions = new Map();
@@ -34,6 +30,17 @@ let suggestions = new Map();
 const esc = s => String(s || '').replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&quot;","'":"&#39;"}[c]));
 
 const sansAccents = s => s.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase().trim();
+
+// Generateur de slug propre pour les URL de fiches casinos
+function slugify(texte) {
+  if (!texte) return "";
+  return texte
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "") // Supprime les accents
+    .replace(/[^a-z0-9]+/g, "-")     // Remplace les espaces/caractères spéciaux par un tiret
+    .replace(/^-+|-+$/g, "");        // Nettoie les tirets aux extrémités
+}
 
 const fRayon = document.getElementById("f-rayon");
 const rayon = () => fRayon ? Number(fRayon.value) : 0; 
@@ -68,24 +75,13 @@ function mettreAJourCompteursAccueil(nbBars, nbCasinos, nbAssoc, nbTotal) {
 // --- 3. TEMPLATING HTML (BOUTONS & CARTES) ---
 // =========================================================
 
-function lierNomCasino(titre) {
-  const page = CASINOS_AVEC_PAGE[titre.textContent];
-  if (page) titre.innerHTML = `<a href="${page}">${titre.innerHTML}</a>`;
-}
-
 function boutonInscription(l) {
   let boutonsHtml = "";
 
   if (l.type === "casino") {
-    if (l.telephone) {
-      const telClean = String(l.telephone).replace(/[^\d+]/g, '');
-      const telAffiche = esc(l.telephone);
-      boutonsHtml += `<a class="btn btn-tel" href="tel:${telClean}" onclick="composerOuCopier(event, '${telClean}')" title="Appeler ou copier le numéro">${telAffiche}</a>`;
-    }
-    if (l.web) {
-      const urlWeb = l.web.startsWith("http") ? l.web : `https://${l.web}`;
-      boutonsHtml += ` <a class="btn btn-web" href="${esc(urlWeb)}" target="_blank" rel="noopener noreferrer">Site web</a>`;
-    }
+    // Bouton de redirection vers la page dédiée du casino
+    const urlFiche = `lieux/${slugify(l.nom)}.html`;
+    boutonsHtml += `<a class="btn btn-fiche" href="${urlFiche}">Voir la fiche</a>`;
   }
   else if (l.inscription && l.inscription.valeur) {
     const libelle = l.inscription.libelle || (l.type === "associatif" ? "Voir le tournoi" : "En savoir plus");
@@ -131,7 +127,7 @@ function details(l) {
   if (l.type === "associatif") {
     infoDate = l.date ? formerDateFr(l.date) : "Date inconnue";
   } else if (l.type === "casino") {
-    infoDate = "Voir les dates sur le site";
+    infoDate = "Voir les dates sur la fiche";
   } else if (l.date) {
     infoDate = `Tous les ${l.date}`;
   }
@@ -144,7 +140,6 @@ function details(l) {
   }
 
   return `${badges}
-    ${l.adresse ? `<p class="meta">${esc(l.adresse)}</p>` : ""}
     <p class="meta">${esc(infoDate)} · ${esc(infoPrix)}</p>
     ${boutonInscription(l)}`;
 }
@@ -261,8 +256,13 @@ function afficher() {
       popupAnchor: [0, -15]
     });
 
+    // Génération du titre cliquable si c'est un casino
+    const titreFormatted = l.type === "casino" 
+      ? `<a href="lieu/${slugify(l.nom)}.html">${esc(l.nom)}</a>` 
+      : esc(l.nom);
+
     const marker = L.marker([l.lat, l.lng], { icon, title: l.nom })
-      .bindPopup(`<strong>${esc(l.nom)}</strong><br>${details(l)}`)
+      .bindPopup(`<strong>${titreFormatted}</strong><br>${details(l)}`)
       .addTo(layer);
 
     if (list) {
@@ -270,7 +270,7 @@ function afficher() {
       card.className = "card";
       card.tabIndex = 0;
       card.style.setProperty("--c", t.couleur);
-      card.innerHTML = `<h2>${esc(l.nom)}</h2>${details(l)}`;
+      card.innerHTML = `<h2>${titreFormatted}</h2>${details(l)}`;
 
       const ouvrir = () => { map.setView([l.lat, l.lng], 12); marker.openPopup(); };
       card.addEventListener("click", e => { if (!e.target.closest("a")) ouvrir(); });
@@ -285,10 +285,6 @@ function afficher() {
     map.fitBounds(LIMITES_FRANCE); 
   } else if (!ref && filtres.length) {
     map.fitBounds(LIMITES_FRANCE, { padding: [20, 20] });
-  }
-
-  if (list) {
-    list.querySelectorAll(".card > h2").forEach(lierNomCasino);
   }
 }
 
@@ -408,7 +404,7 @@ function definirReference(nouvelle) {
   if (lienVille) {
     lienVille.hidden = !ville;
     if (ville) {
-      lienVille.href = "villes/" + sansAccents(ville) + ".html";
+      lienVille.href = "lieux/" + sansAccents(ville) + ".html";
       document.getElementById("lien-page-ville-texte").textContent = `Voir la page « Poker à ${ville} »`;
     }
   }
