@@ -72,7 +72,7 @@ function mettreAJourCompteursAccueil(nbBars, nbCasinos, nbAssoc, nbTotal) {
 
 
 // =========================================================
-// --- 3. TEMPLATING HTML (BOUTONS & CARTES) ---
+// --- 3. TEMPLATING HTML (BOUTONS, CARTES & AGENDA) ---
 // =========================================================
 
 function boutonInscription(l) {
@@ -142,6 +142,59 @@ function details(l) {
   return `${badges}
     <p class="meta">${esc(infoDate)} · ${esc(infoPrix)}</p>
     ${boutonInscription(l)}`;
+}
+
+function afficherProchainsTournois(caritatifs) {
+  const conteneur = document.getElementById("conteneur-prochains-tournois") || document.querySelector(".mini-evenements");
+  if (!conteneur) return;
+
+  const aujourdhui = new Date().toISOString().split('T')[0];
+  const joursFr = ["dim", "lun", "mar", "mer", "jeu", "ven", "sam"];
+  const moisFr = ["janv", "févr", "mars", "avr", "mai", "juin", "juil", "août", "sept", "oct", "nov", "déc"];
+
+  // Filtrage des tournois futurs et tri chronologique
+  const futurs = caritatifs
+    .filter(c => {
+      const d = c.date || c.properties?.date;
+      return d && d >= aujourdhui;
+    })
+    .sort((a, b) => (a.date || a.properties?.date).localeCompare(b.date || b.properties?.date))
+    .slice(0, 3);
+
+  if (!futurs.length) {
+    conteneur.innerHTML = "<p class='meta'>Aucun tournoi à venir pour le moment.</p>";
+    return;
+  }
+
+  conteneur.innerHTML = futurs.map(c => {
+    const dateStr = c.date || c.properties?.date;
+    const [annee, m, j] = dateStr.split('-').map(Number);
+    const dateObj = new Date(annee, m - 1, j);
+
+    const jourSem = joursFr[dateObj.getDay()];
+    const jourNum = j;
+    const moisStr = moisFr[m - 1];
+
+    const nom = esc(c.nom || c.properties?.nom || "Tournoi associatif");
+    const adresse = esc(c.adresse || c.properties?.adresse || "");
+    const heure = c.heure || c.properties?.heure || "";
+    const prix = esc(c.prix || c.properties?.prix || (c.gratuit ? "Gratuit" : "Payant"));
+    const metaInfo = heure ? `${esc(heure)} · ${prix}` : prix;
+
+    const url = c.inscription?.valeur || c.url || c.web || c.properties?.inscription?.valeur || c.properties?.url || "#";
+
+    return `
+        <article class="mini-evenement">
+          <div class="date-bloc" aria-hidden="true">
+            <span class="jour-sem">${jourSem}</span>
+            <span class="jour">${jourNum}</span>
+            <span class="mois">${moisStr}</span>
+          </div>
+          <div>
+            <h3 class="fiche-titre"><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${nom}</a></h3>
+          </div>
+        </article>`;
+  }).join('');
 }
 
 
@@ -341,6 +394,9 @@ Promise.all([
     caritatifsValides.length,
     lieux.length
   );
+
+  // --- AFFICHAGE DYNAMIQUE DES PROCHAINS TOURNOIS ---
+  afficherProchainsTournois(caritatifsValides);
 
   if (typeof map !== 'undefined' && map) {
     afficher();
