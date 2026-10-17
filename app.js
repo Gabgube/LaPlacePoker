@@ -90,7 +90,7 @@ function boutonInscription(l) {
   else if (l.url) {
     let libelle = "En savoir plus";
     if (l.type === "associatif") libelle = "Voir le tournoi";
-    else if (l.type === "bar") libelle = "Voir la page du bar";
+    else if (l.type === "bar") libelle = "Voir la page";
 
     boutonsHtml += `<a class="btn" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${esc(libelle)}</a>`;
   } 
@@ -98,7 +98,7 @@ function boutonInscription(l) {
     const urlBase = "https://poker.redcactus.fr"; 
     const rawId = String(l.id).replace(/^rc_/, '');
     const url = rawId ? `${urlBase}/bar/${rawId}` : urlBase;
-    boutonsHtml += `<a class="btn" href="${url}" target="_blank" rel="noopener noreferrer">Voir la page du bar</a>`;
+    boutonsHtml += `<a class="btn" href="${url}" target="_blank" rel="noopener noreferrer">Voir la page</a>`;
   }
 
   if (typeof l.lat === "number" && typeof l.lng === "number") {
