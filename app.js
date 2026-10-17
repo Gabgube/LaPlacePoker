@@ -278,9 +278,10 @@ function afficher() {
   });
 
   // 5. Ajustement de la vue de la carte
+  const LIMITES_FRANCE = [[41.3, -5.2], [51.1, 9.6]];
   if (ref && !layer.getLayers().length) {
     map.fitBounds(LIMITES_FRANCE); 
-  } else if (!ref && filtres.length) {
+  } else if (!ref) {
     map.fitBounds(LIMITES_FRANCE, { padding: [20, 20] });
   }
 }
@@ -422,7 +423,10 @@ async function chercherCommunes(q, limit = 5) {
 }
 
 async function chercherVille(q) {
-  if (!q) return;
+  if (!q) {
+    definirReference(null);
+    return;
+  }
   if (suggestions.has(q)) return definirReference(suggestions.get(q));
 
   afficherStatut("Recherche…");
@@ -501,8 +505,19 @@ document.addEventListener("DOMContentLoaded", () => {
   let minuterie;
 
   if (champVille) {
+    // Événement déclenché lors du clic sur la croix native de l'input type="search"
+    champVille.addEventListener("search", () => {
+      if (!champVille.value.trim()) {
+        definirReference(null);
+      }
+    });
+
     champVille.addEventListener("input", () => {
       const q = champVille.value.trim();
+      if (!q) {
+        definirReference(null);
+        return;
+      }
       if (suggestions.has(q)) {
         definirReference(suggestions.get(q));
         champVille.blur();
@@ -524,7 +539,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (formLieu) {
     formLieu.addEventListener("submit", e => {
       e.preventDefault();
-      if (champVille) chercherVille(champVille.value.trim());
+      const q = champVille ? champVille.value.trim() : "";
+      chercherVille(q);
     });
   }
 
