@@ -103,7 +103,7 @@ function boutonInscription(l) {
 
   if (typeof l.lat === "number" && typeof l.lng === "number") {
     const urlMaps = `https://www.google.com/maps/dir/?api=1&destination=${l.lat},${l.lng}`;
-    boutonsHtml += ` <a class="btn btn-maps" href="${urlMaps}" target="_blank" rel="noopener noreferrer">Itinéraire</a>`;
+    boutonsHtml += ` <a class="btn btn-secondaire btn-maps" href="${urlMaps}" target="_blank" rel="noopener noreferrer">Itinéraire</a>`;
   }
 
   return boutonsHtml;

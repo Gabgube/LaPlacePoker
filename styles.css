@@ -608,6 +608,19 @@ details[open] .texte-cacher {
   mask: var(--ico) center / contain no-repeat;
 }
 
+#map .leaflet-popup-content .btn-secondaire,
+#map .leaflet-popup-content .btn-maps {
+  background: var(--surface) !important;
+  border: 1px solid var(--ligne-forte) !important;
+  color: var(--ink) !important;
+}
+
+#map .leaflet-popup-content .btn-secondaire:hover,
+#map .leaflet-popup-content .btn-maps:hover {
+  background: var(--bg) !important;
+  border-color: var(--muted) !important;
+}
+
 #list .meta:not(:last-of-type), #map .leaflet-popup-content .meta:not(:last-of-type) { --ico: var(--ico-pin); }
 #list .meta:last-of-type, #map .leaflet-popup-content .meta:last-of-type { --ico: var(--ico-calendrier); }
 #list .tag-poker, #map .leaflet-popup-content .tag-poker { --ico: var(--ico-ticket); }
@@ -667,15 +680,13 @@ details[open] .texte-cacher {
   background: var(--btn-hover);
 }
 
-#list .btn-tel, #list .btn-maps,
-#map .leaflet-popup-content .btn-tel, #map .leaflet-popup-content .btn-maps {
+.btn-tel, .btn-maps {
   background: var(--surface);
   border-color: var(--ligne-forte);
   color: var(--ink);
 }
 
-#list .btn-tel:hover, #list .btn-maps:hover,
-#map .leaflet-popup-content .btn-tel:hover, #map .leaflet-popup-content .btn-maps:hover {
+.btn-tel:hover, .btn-maps:hover {
   background: var(--bg);
   border-color: var(--muted);
 }
@@ -683,8 +694,8 @@ details[open] .texte-cacher {
 #list .btn-tel, #map .leaflet-popup-content .btn-tel { order: 6; }
 #list .btn-maps, #map .leaflet-popup-content .btn-maps { order: 7; }
 
-#list .btn-web::before, #list .btn-tel::before, #list .btn-maps::before,
-#map .leaflet-popup-content .btn-web::before, #map .leaflet-popup-content .btn-tel::before, #map .leaflet-popup-content .btn-maps::before {
+/* Pseudo-élément icônes globaux pour tous les boutons du site */
+.btn-web::before, .btn-tel::before, .btn-maps::before {
   content: "";
   flex-shrink: 0;
   width: 15px;
@@ -694,9 +705,9 @@ details[open] .texte-cacher {
   mask: var(--ico) center / contain no-repeat;
 }
 
-#list .btn-web, #map .leaflet-popup-content .btn-web { --ico: var(--ico-externe); }
-#list .btn-tel, #map .leaflet-popup-content .btn-tel { --ico: var(--ico-telephone); }
-#list .btn-maps, #map .leaflet-popup-content .btn-maps { --ico: var(--ico-itineraire); }
+.btn-web { --ico: var(--ico-externe); }
+.btn-tel { --ico: var(--ico-telephone); }
+.btn-maps { --ico: var(--ico-itineraire); }
 
 /* --- 7. Modale --- */
 #dlg-tournoi {
@@ -1040,7 +1051,7 @@ details[open] .texte-cacher {
 }
 
 .section-titre h2,
-.section-ville h2 {
+.section-proche h2 {
   margin: 0;
   font-family: var(--titre);
   font-size: 1.55rem;
@@ -1425,8 +1436,8 @@ details[open] .texte-cacher {
 
 .bloc-carte-ville #mini-carte { min-height: 380px; }
 
-.section-ville { margin-top: 40px; }
-.section-ville h2 { margin-bottom: 16px; }
+.section-proche { margin-top: 40px; }
+.section-proche h2 { margin-bottom: 16px; }
 
 .semaine-type {
   display: grid;
@@ -1579,7 +1590,7 @@ details[open] .texte-cacher {
 /* --- Mobile global (accueil, villes et casinos) --- */
 @media (max-width: 860px) {
   .section { padding: 32px 14px 0; }
-  .section-titre h2, .section-ville h2 { font-size: 1.3rem; }
+  .section-titre h2, .section-proche h2 { font-size: 1.3rem; }
   .conteneur { padding: 18px 14px 48px; }
 
   .hero { padding: 32px 16px 20px; }
